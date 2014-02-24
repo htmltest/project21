@@ -1,0 +1,212 @@
+@font-face {font-family:"PFDinDisplayProBold"; src:url("../fonts/pfdindisplaypro-bold-webfont.eot"); src:url("../fonts/pfdindisplaypro-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/pfdindisplaypro-bold-webfont.woff") format("woff"), url("../fonts/pfdindisplaypro-bold-webfont.svg#PFDinDisplayProBold") format("svg"), url("../fonts/pfdindisplaypro-bold-webfont.ttf") format("truetype"); font-weight:normal; font-style:normal}
+
+html {min-width:1000px}
+
+body {min-width:1000px; margin:0; padding:0; font:14px/18px "PT Sans", sans-serif; color:#000; background:#fff}
+
+a {color:#f05033; text-decoration:none; outline:none}
+a:hover {color:#000}
+
+img {border:none}
+
+.wrapper {min-width:1000px; width:100%; position:relative; overflow:hidden}
+
+header {height:108px; background:#1b1b1b}
+.header-inner {width:980px; margin:0 auto}
+.header-inner:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+
+.logo {float:left; line-height:0; padding:19px 0 0 20px}
+
+.header-menu {float:right; margin:0; padding:39px 10px 0 0; list-style:none}
+.header-menu li {float:left; margin:0; padding:0 20px}
+.header-menu li.active {background:#f05033}
+.header-menu li a {height:35px; color:#fff; font:bold 18px/35px "Open Sans Condensed", sans-serif; text-transform:uppercase}
+.header-menu li.active a {text-decoration:none; cursor:default}
+
+#area {background:url(../images/area.jpg) no-repeat center; position:relative; width:100%; overflow:hidden}
+.area-img {position:absolute; width:100%}
+.area-inner {position:absolute}
+.area-phone {position:absolute; left:0; bottom:38px; width:100%; color:#fff; text-align:center; font:bold 36px/36px "Open Sans Condensed", sans-serif}
+.area-info {position:absolute}
+.area-info-open {z-index:2}
+.area-icon {width:31px; height:31px; background:url(../images/area-icon.png); cursor:pointer}
+.area-line {display:none; position:absolute; width:67px; height:50px}
+.area-info-open .area-line {display:block}
+.area-line-t-r {left:31px; bottom:30px; background:url(../images/area-line-t-r.png)}
+.area-line-b-r {left:31px; top:30px; background:url(../images/area-line-t-l.png)}
+.area-line-t-l {right:31px; bottom:30px; background:url(../images/area-line-t-l.png)}
+.area-line-b-l {right:31px; top:30px; background:url(../images/area-line-t-r.png)}
+.area-text {display:none; position:absolute; width:300px; padding:27px 40px 28px 40px; background:#f05033; background:rgba(240, 80, 51, .9); color:#fff}
+.area-info-open .area-text {display:block}
+.area-text-t-r {left:98px; bottom:18px}
+.area-text-b-r {left:98px; top:18px}
+.area-text-t-l {right:98px; bottom:18px}
+.area-text-b-l {right:98px; top:18px}
+.area-text-title {font:bold 18px/18px "Open Sans Condensed", sans-serif; text-transform:uppercase}
+.area-text-descr {padding:11px 0 0 0}
+
+#plans {display:none; background:url(../images/plans.jpg) center top; padding:20px 0 36px 0}
+.plans-inner {width:990px; margin:0 auto}
+.plans-ctrl {width:100%; padding:0 0 21px 0}
+.plans-ctrl:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.plans-ctrl ul {float:right; margin:0; padding:0; list-style:none; font-weight:bold}
+.plans-ctrl ul li {float:left; margin:0; padding:0 0 0 2px}
+.plans-ctrl ul li a {float:left; padding:0 0 0 45px; color:#fff; line-height:31px}
+.plans-ctrl ul li a.plans-ctrl-1 {width:55px; background:url(../images/plans-ctrl-1.png)}
+.plans-ctrl ul li a.plans-ctrl-2 {width:61px; background:url(../images/plans-ctrl-2.png)}
+.plans-ctrl ul li.active a {color:#000; background-position:left -31px}
+
+.plans-container {background:#1b1b1b; padding:0 20px}
+.plans-content {display:none}
+.plans-content.active {display:block}
+.plans-tabs-menu {height:134px}
+.plans-tabs-menu ul {margin:0; padding:0; list-style:none; width:100%}
+.plans-tabs-menu ul li {float:left; margin:0; padding:0; height:134px; position:relative; width:160px; margin:0 0 0 -2px; background:url(../images/plans-tabs-sep.png) no-repeat}
+.plans-tabs-menu ul li.active {z-index:2}
+.plans-tabs-menu ul li:first-child {background:none; margin:0}
+.plans-tabs-menu ul li a {display:block; position:relative; height:134px; cursor:pointer; padding:0 0 0 20px}
+.plans-tabs-menu ul li.active a {padding-top:11px; margin-top:-11px; background:#fff}
+.plans-tabs-menu-title {font:bold 18px/18px "Open Sans Condensed", sans-serif; text-transform:uppercase; color:#fff; padding:16px 0 0 0}
+.plans-tabs-menu ul li.active .plans-tabs-menu-title {color:#000}
+.plans-tabs-menu-price {font:bold 36px/36px "Open Sans Condensed", sans-serif; text-transform:uppercase; color:#e65032; margin:0 0 0 -2px}
+.plans-tabs-menu-price span {background:url(../images/rub.png) repeat-x left 32px}
+.plans-tabs-menu-oldprice {padding:11px 0 0 0; font:bold 14px/14px "Open Sans Condensed", sans-serif; text-transform:uppercase; color:#e65032; text-decoration:line-through; opacity:.5; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50)}
+.plans-tabs-menu-old {padding:1px 0 0 0; font-size:12px; line-height:14px; color:#808080; opacity:.5; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50)}
+
+.plans-tabs-container {background:#fff; padding:36px 30px 28px 40px}
+.plans-tabs-content {display:none}
+.plans-tabs-content.active {display:block}
+.plans-tabs-descr {color:#20222d; font-weight:bold; font-size:18px; border:3px solid #eeeff2; padding:13px 48px 17px 48px}
+.plans-tabs-cols {width:100%; padding:42px 0 0 0}
+.plans-tabs-cols:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.plans-tabs-col {float:left; width:220px; padding:0 0 0 51px}
+.plans-tabs-col-title {font:18px/18px "PFDinDisplayProBold", sans-serif; text-transform:uppercase}
+.plans-tabs-col ul {margin:0; padding:30px 0 0 0; list-style:none}
+.plans-tabs-col ul li {margin:0; padding:0 0 9px 20px; color:#bfbfbf}
+.plans-tabs-col ul li.active {font-weight:bold; color:#000; background:url(../images/plans-tabs-col-active.png) no-repeat left 4px}
+
+.plans-tabs-add {width:100%; padding:0 0 28px 0}
+.plans-tabs-add:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.plans-tabs-add-1 {float:left; padding:0 0 0 91px; width:542px}
+.plans-tabs-add-title {font:bold 18px/18px "Open Sans Condensed", sans-serif; text-transform:uppercase; color:#f05033; padding:29px 0 33px 0}
+.plans-tabs-add-row {width:100%; color:#fff; padding:0 0 9px 0}
+.plans-tabs-add-row:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.plans-tabs-add-name {float:left; width:300px; padding:0 20px 0 0; color:#dfdfe0}
+.plans-tabs-add-price {float:left; font-size:18px; padding:1px 0 0 0}
+.plans-tabs-add-price strong {font:bold 18px/18px "Open Sans Condensed", sans-serif}
+.plans-tabs-add-2 {float:left; width:220px}
+.plans-tabs-add-phone {color:#fff; font:bold 30px/30px "Open Sans Condensed", sans-serif; margin-top:-14px}
+.plans-tabs-add-email {font:bold 18px/18px "Open Sans Condensed", sans-serif; padding:8px 0 0 0}
+.plans-tabs-add-email a {color:#fff; text-decoration:underline}
+.plans-tabs-add-email a:hover {text-decoration:none}
+
+#events {display:none; background:url(../images/plans.jpg) center top; padding:72px 0 81px 0}
+.events-title {width:204px; height:71px; margin:0 auto; background:#fff; text-align:center; font:bold 36px/71px "Open Sans Condensed", sans-serif; text-transform:uppercase}
+
+.events-container {position:relative; width:100%; margin-top:48px}
+.events-content {width:940px; margin:0 auto; position:relative}
+.events-content ul {width:9999px; margin:0; padding:0; list-style:none; position:relative}
+.events-content ul:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.events-content ul li {float:left; width:240px; margin:0; padding:0; opacity:.25; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=25)}
+.events-content ul li.active {opacity:1; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=100)}
+.event-photo {width:220px; position:relative; line-height:0; overflow:hidden}
+.event-text {background:#fff; padding:0 20px 27px 20px; width:180px}
+.event-title {font:bold 18px/18px "Open Sans Condensed", sans-serif; text-transform:uppercase; padding:17px 0 0 0}
+.event-date {color:#f05033; padding:17px 0 0 0}
+.event-descr {font-size:12px; padding:8px 0 0 0}
+.event-descr p {margin:0; padding:18px 0 0 0}
+.event-descr p:first-child {padding:0}
+.events-prev,
+.events-next {position:absolute; top:213px; display:block; width:72px; height:72px; background:url(../images/events-arrows.png)}
+.events-prev {left:0}
+.events-prev:hover {background-position:left -72px}
+.events-next {right:0; background-position:-72px top}
+.events-next:hover {background-position:-72px -72px}
+
+#prefs {height:179px; background:#1b1b1b; border-bottom:3px solid #f05033}
+.prefs-inner {width:961px; margin:0 auto; padding:0 0 0 1px; background:url(../images/prefs-sep.png) no-repeat}
+.prefs-inner:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.pref {float:left; width:159px; padding:0 1px 0 0; background:url(../images/prefs-sep.png) no-repeat right top; position:relative}
+.pref-link {display:block; width:159px; height:179px; color:#fff; text-align:center; font:bold 14px/18px "Open Sans Condensed", sans-serif; text-transform:uppercase}
+.pref-open .pref-link {color:#f05033}
+.pref-link:hover {color:#fff}
+.pref-link span {display:block; height:110px; position:relative}
+.pref-link strong {display:block; margin:0 auto; position:relative}
+.pref-icon-1 {width:45px; height:66px; top:23px; background:url(../images/pref-icon-1.png)}
+.pref-open .pref-icon-1 {background-position:left -66px}
+.pref-icon-2 {width:54px; height:78px; top:8px; background:url(../images/pref-icon-2.png)}
+.pref-open .pref-icon-2 {background-position:left -78px}
+.pref-icon-3 {width:65px; height:65px; top:23px; background:url(../images/pref-icon-3.png)}
+.pref-open .pref-icon-3 {background-position:left -65px}
+.pref-icon-4 {width:86px; height:52px; top:30px; background:url(../images/pref-icon-4.png)}
+.pref-open .pref-icon-4 {background-position:left -52px}
+.pref-icon-5 {width:68px; height:68px; top:22px; background:url(../images/pref-icon-5.png)}
+.pref-open .pref-icon-5 {background-position:left -68px}
+.pref-icon-6 {width:89px; height:75px; top:18px; background:url(../images/pref-icon-6.png)}
+.pref-open .pref-icon-6 {background-position:left -75px}
+.pref-info {display:none; position:absolute; z-index:3; left:0; bottom:179px; background:#fff; width:260px; padding:34px 30px 28px 31px}
+.pref-info-right {left:auto; right:0}
+.pref-open .pref-info {display:block}
+.pref-arrow {display:none; position:absolute; z-index:3; left:63px; top:-9px; width:0; height:0; border-bottom:9px solid #1b1b1b; border-left:18px solid transparent; border-right:18px solid transparent}
+.pref-open .pref-arrow {display:block}
+.pref-info-title {font:bold 18px/18px "Open Sans Condensed", sans-serif; text-transform:uppercase}
+.pref-info-text {padding:28px 0 0 0}
+
+#open {border:3px solid #f05033; padding:0 37px; width:740px; margin:35px auto 0 auto}
+.open-title {text-align:center; font:bold 36px/36px "Open Sans Condensed", sans-serif; text-transform:uppercase; padding:23px 0 0 0}
+.open-container {width:100%; padding:55px 0 32px 0}
+.open-container:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.open-text {float:left; width:330px; padding:0 39px 1px 0; border-right:3px solid #eeeff2}
+.open-text-1 {text-transform:uppercase; font:bold 18px/24px "Open Sans Condensed", sans-serif; padding:6px 0 22px 0}
+.open-text-1 span {color:#f05033}
+.open-form {float:left; width:330px; padding:0 0 0 38px; border-left:3px solid #eeeff2; margin:0 0 0 -3px}
+.open-form form {margin:0; padding:0}
+.open-input {position:relative; margin:0 0 10px 0}
+.open-input span {display:none; position:absolute; left:15px; top:6px; text-transform:uppercase; font:bold 18px/24px "Open Sans Condensed", sans-serif}
+.open-input input {vertical-align:top; background:url(../images/blank.gif); border:1px solid #ccc; font:bold 18px/24px "Open Sans Condensed", sans-serif; color:#000; width:300px; height:24px; padding:4px 14px 5px 14px; outline:none; margin:0}
+.open-input input.error {border-color:#f05033}
+.open-input label {display:none !important}
+.open-submit {padding:8px 0 0 0}
+.open-submit input {vertical-align:top; width:100%; height:35px; font:bold 14px/35px "Open Sans Condensed", sans-serif; color:#fff; text-transform:uppercase; border:none; background:#f05033; cursor:pointer; margin:0; padding:0; outline:none}
+.open-submit input:hover {background:#000}
+.open-hint {font-style:italic; padding:18px 0 0 10px; color:#a3a3a3}
+
+#about {width:980px; margin:0 auto; padding:63px 0 39px 0}
+.about-title {text-align:center; text-transform:uppercase; font:bold 36px/36px "Open Sans Condensed", sans-serif}
+.about-row {width:100%; padding:45px 0 24px 0}
+.about-row:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.about-col {float:left; width:260px; padding:0 20px 0 40px}
+.about-col p {margin:0; padding:18px 0 0 0}
+.about-col p:first-child {padding:0}
+.about-author {width:100%; padding:0 0 17px 0}
+.about-author:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.about-author-photo {float:left; width:60px; height:60px; position:relative; -moz-border-radius:30px; -webkit-border-radius:30px; -khtml-border-radius:30px; border-radius:30px; behavior:url(./js/PIE.htc)}
+.about-author-container {margin-left:75px}
+.about-author-name {text-transform:uppercase; font:bold 18px/18px "Open Sans Condensed", sans-serif; padding:11px 0 0 0; letter-spacing:0}
+.about-author-post {color:#f05033; padding:2px 0 0 0}
+.about-author-text {background:#f6f7f8; font-style:italic; padding:25px 20px 28px 20px; position:relative}
+.about-author-text:before {content:""; display:block; position:absolute; left:27px; top:-8px; width:0; height:0; border-bottom:8px solid #f6f7f8; border-right:8px solid transparent}
+
+#map {border-top:3px solid #f05033; border-bottom:3px solid #f05033; height:500px; width:100%}
+
+footer {width:960px; margin:0 auto; padding:49px 0 0 20px}
+footer:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+
+.footer-col {float:left; width:240px}
+
+.footer-title {text-transform:uppercase; font:bold 18px/18px "Open Sans Condensed", sans-serif}
+
+.footer-menu {margin:0; padding:2px 0 0 0; list-style:none}
+.footer-menu li {margin:0; padding:9px 0 0 0}
+
+.instagram {line-height:0; margin:13px 0 0 0; width:100%; position:relative; overflow:hidden}
+
+.social {line-height:0; padding:13px 0 0 0}
+.social a {float:left; width:35px; height:35px; margin:0 10px 0 0; background:url(../images/social.png)}
+.social a.social-vk {background-position:left top}
+.social a.social-facebook {background-position:-35px top}
+.social a.social-twitter {background-position:-70px top}
+.social a.social-gplus {background-position:-105px top}
+
+.copyrights {width:960px; padding:4px 0 37px 20px; margin:0 auto}
+.copyrights p {margin:0; padding:0}
