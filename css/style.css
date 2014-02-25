@@ -23,7 +23,11 @@ header {height:108px; background:#1b1b1b}
 .header-menu li a {height:35px; color:#fff; font:bold 18px/35px "Open Sans Condensed", sans-serif; text-transform:uppercase}
 .header-menu li.active a {text-decoration:none; cursor:default}
 
-#area {background:url(../images/area.jpg) no-repeat center; position:relative; width:100%; overflow:hidden}
+#area {position:relative; width:100%; overflow:hidden}
+.area-content {width:100%; position:relative}
+.area-content ul {margin:0; padding:0; list-style:none; position:relative; width:100%}
+.area-content ul li {margin:0; padding:0; position:absolute; left:-9999px; top:-9999px; width:100%}
+.area-content ul li:first-child {left:0; top:0}
 .area-img {position:absolute; width:100%}
 .area-inner {position:absolute}
 .area-phone {position:absolute; left:0; bottom:38px; width:100%; color:#fff; text-align:center; font:bold 36px/36px "Open Sans Condensed", sans-serif}

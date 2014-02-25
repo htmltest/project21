@@ -1,3 +1,8 @@
+var speedSlider  = 500;     // скорость смены слайда на главной странице
+var periodSlider = 5000;    // период автоматической смены слайда на главной страницы ("0" - автоматическая смена отключена)
+
+var timerSlider  = null;
+
 (function($) {
 
     $(document).ready(function() {
@@ -13,19 +18,47 @@
                     case '#area':
                         $('#plans, #events').hide();
                         $('#area').show();
+                        $('.pref-open').removeClass('pref-open');
                         break;
                     case '#plans':
                         $('#area, #events').hide();
                         $('#plans').show();
+                        $('.area-info-open').removeClass('area-info-open');
+                        $('.pref-open').removeClass('pref-open');
                         break;
                     case '#events':
                         $('#area, #plans').hide();
                         $('#events').show();
+                        $('.area-info-open').removeClass('area-info-open');
+                        $('.pref-open').removeClass('pref-open');
                         break;
                 }
             }
             return false;
         });
+
+        // слайдер
+        $('.area-content').each(function() {
+            var curSlider = $(this);
+            curSlider.data('curIndex', 0);
+            curSlider.data('disableAnimation', true);
+            if (periodSlider > 0) {
+                timerSlider = window.setTimeout(sliderNext, periodSlider);
+            }
+        });
+
+        $('#area').hover(
+            function() {
+                window.clearTimeout(timerSlider);
+                timerSlider = null;
+            },
+
+            function() {
+                if (periodSlider > 0) {
+                    timerSlider = window.setTimeout(sliderNext, periodSlider);
+                }
+            }
+        );
 
         // информация по пространству
         $('.area-icon').click(function() {
@@ -188,7 +221,7 @@
             curHeight = 431;
         }
 
-        $('#area').css({'min-height': curHeight});
+        $('#area, #area li').css({'min-height': curHeight});
         $('.area-img').each(function() {
             var curImg = $(this);
             curImg.css({'width': 'auto', 'height': 'auto'});
@@ -209,7 +242,7 @@
             var diffX = newImgWidth / curImgWidth;
             var diffY = newImgHeight / curImgHeight;
 
-            $('.area-info').each(function() {
+            curImg.parent().find('.area-info').each(function() {
                 var curBlock = $(this);
                 if (curBlock.data('curX')) {
                     var curX = curBlock.data('curX');
@@ -237,5 +270,32 @@
         });
         $('.about-author-text').css({'min-height': curMax});
     });
+
+    // переход к следующему слайду
+    function sliderNext() {
+        window.clearTimeout(timerSlider);
+        timerSlider = null;
+
+        var curSlider = $('.area-content');
+        if (curSlider.data('disableAnimation')) {
+            var curIndex = curSlider.data('curIndex');
+            var newIndex = curIndex + 1;
+            if (newIndex == curSlider.find('ul li').length) {
+                newIndex = 0;
+            }
+
+            curSlider.data('curIndex', newIndex);
+            curSlider.data('disableAnimation', false);
+            curSlider.find('ul li').eq(curIndex).css({'z-index': 1});
+            curSlider.find('ul li').eq(newIndex).css({'z-index': 'auto', 'left': 0, 'top': 0}).show();
+            curSlider.find('ul li').eq(curIndex).fadeOut(speedSlider, function() {
+                curSlider.find('ul li').eq(curIndex).find('.area-info-open').removeClass('area-info-open');
+                curSlider.data('disableAnimation', true);
+                if (periodSlider > 0) {
+                    timerSlider = window.setTimeout(sliderNext, periodSlider);
+                }
+            });
+        }
+    }
 
 })(jQuery);
