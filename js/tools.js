@@ -7,6 +7,12 @@ var timerSlider  = null;
 
     $(document).ready(function() {
 
+        // адрес в шапке
+        $('.address-text a').click(function() {
+            $.scrollTo($(this).attr('href'), 500);
+            return false;
+        });
+
         // переключение блоков
         $('.header-menu li a').click(function() {
             var curLink = $(this);
@@ -211,12 +217,38 @@ var timerSlider  = null;
             return false;
         });
 
+        // окно формы
+        $('.area-order').click(function() {
+            $('.window').show();
+            $('.window').css({'margin-top': -$('.window').height() / 2});
+            $('.overlay').show();
+            return false;
+        });
+
+        $('.window-close').click(function() {
+            $('.window').hide();
+            $('.overlay').hide();
+            return false;
+        });
+
+        $('.overlay').click(function() {
+            $('.window').hide();
+            $('.overlay').hide();
+        });
+
+        $('body').bind('keypress keydown', function(e) {
+            if (e.keyCode == 27) {
+                $('.window').hide();
+                $('.overlay').hide();
+            }
+        });
+
     });
 
     // пространство
     $(window).bind('load resize', function() {
         var curWidth  = $(window).width();
-        var curHeight = $(window).height() - 290;
+        var curHeight = $(window).height() - 198;
         if (curHeight < 431) {
             curHeight = 431;
         }

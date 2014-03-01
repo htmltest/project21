@@ -11,16 +11,21 @@ img {border:none}
 
 .wrapper {min-width:1000px; width:100%; position:relative; overflow:hidden}
 
-header {height:108px; background:#1b1b1b}
-.header-inner {width:980px; margin:0 auto}
+header {height:71px; background:#1b1b1b; position:relative; z-index:2}
+.header-inner {width:980px; margin:0 auto; position:relative}
 .header-inner:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 
-.logo {float:left; line-height:0; padding:19px 0 0 20px}
+.logo {position:absolute; left:10px; top:0}
 
-.header-menu {float:right; margin:0; padding:39px 10px 0 0; list-style:none}
+.address {position:absolute; left:340px; top:16px; color:#fff}
+.phone {font:bold 14px/18px "Open Sans Condensed", sans-serif}
+.address-text a {background:url(../images/dots.png) repeat-x left bottom}
+.address-text a:hover {color:#f05033; background:none}
+
+.header-menu {position:absolute; right:20px; top:18px; margin:0; padding:0; list-style:none}
 .header-menu li {float:left; margin:0; padding:0 20px}
 .header-menu li.active {background:#f05033}
-.header-menu li a {height:35px; color:#fff; font:bold 18px/35px "Open Sans Condensed", sans-serif; text-transform:uppercase}
+.header-menu li a {height:35px; color:#fff; font:bold 14px/35px "Open Sans Condensed", sans-serif; text-transform:uppercase}
 .header-menu li.active a {text-decoration:none; cursor:default}
 
 #area {position:relative; width:100%; overflow:hidden}
@@ -30,9 +35,9 @@ header {height:108px; background:#1b1b1b}
 .area-content ul li:first-child {left:0; top:0}
 .area-img {position:absolute; width:100%}
 .area-inner {position:absolute}
-.area-phone {position:absolute; left:0; bottom:38px; width:100%; color:#fff; text-align:center; font:bold 36px/36px "Open Sans Condensed", sans-serif}
+.area-order {display:block; position:absolute; left:50%; margin-left:-165px; bottom:37px; width:330px; height:35px; text-transform:uppercase; z-index:2; color:#fff; text-align:center; font:bold 14px/35px "Open Sans Condensed", sans-serif; background:#f05033}
 .area-info {position:absolute}
-.area-info-open {z-index:2}
+.area-info-open {z-index:3}
 .area-icon {width:31px; height:31px; background:url(../images/area-icon.png); cursor:pointer}
 .area-line {display:none; position:absolute; width:67px; height:50px}
 .area-info-open .area-line {display:block}
@@ -127,38 +132,91 @@ header {height:108px; background:#1b1b1b}
 .events-next {right:0; background-position:-72px top}
 .events-next:hover {background-position:-72px -72px}
 
-#prefs {height:179px; background:#1b1b1b; border-bottom:3px solid #f05033}
+#prefs {height:124px; background:#1b1b1b; border-bottom:3px solid #f05033}
 .prefs-inner {width:961px; margin:0 auto; padding:0 0 0 1px; background:url(../images/prefs-sep.png) no-repeat}
 .prefs-inner:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 .pref {float:left; width:159px; padding:0 1px 0 0; background:url(../images/prefs-sep.png) no-repeat right top; position:relative}
-.pref-link {display:block; width:159px; height:179px; color:#fff; text-align:center; font:bold 14px/18px "Open Sans Condensed", sans-serif; text-transform:uppercase}
+.pref-link {display:block; width:159px; height:124px; color:#fff; text-align:center; font:bold 12px/18px "Open Sans Condensed", sans-serif; text-transform:uppercase}
 .pref-open .pref-link {color:#f05033}
 .pref-link:hover {color:#fff}
-.pref-link span {display:block; height:110px; position:relative}
+.pref-link span {display:block; height:72px; position:relative}
 .pref-link strong {display:block; margin:0 auto; position:relative}
-.pref-icon-1 {width:45px; height:66px; top:23px; background:url(../images/pref-icon-1.png)}
-.pref-open .pref-icon-1 {background-position:left -66px}
-.pref-icon-2 {width:54px; height:78px; top:8px; background:url(../images/pref-icon-2.png)}
-.pref-open .pref-icon-2 {background-position:left -78px}
-.pref-icon-3 {width:65px; height:65px; top:23px; background:url(../images/pref-icon-3.png)}
-.pref-open .pref-icon-3 {background-position:left -65px}
-.pref-icon-4 {width:86px; height:52px; top:30px; background:url(../images/pref-icon-4.png)}
-.pref-open .pref-icon-4 {background-position:left -52px}
-.pref-icon-5 {width:68px; height:68px; top:22px; background:url(../images/pref-icon-5.png)}
-.pref-open .pref-icon-5 {background-position:left -68px}
-.pref-icon-6 {width:89px; height:75px; top:18px; background:url(../images/pref-icon-6.png)}
-.pref-open .pref-icon-6 {background-position:left -75px}
-.pref-info {display:none; position:absolute; z-index:3; left:0; bottom:179px; background:#fff; width:260px; padding:34px 30px 28px 31px}
+.pref-icon-1 {width:23px; height:34px; top:21px; background:url(../images/pref-icon-1.png)}
+.pref-open .pref-icon-1 {background-position:left -34px}
+.pref-icon-2 {width:28px; height:40px; top:15px; background:url(../images/pref-icon-2.png)}
+.pref-open .pref-icon-2 {background-position:left -40px}
+.pref-icon-3 {width:33px; height:34px; top:20px; background:url(../images/pref-icon-3.png)}
+.pref-open .pref-icon-3 {background-position:left -34px}
+.pref-icon-4 {width:44px; height:27px; top:24px; background:url(../images/pref-icon-4.png)}
+.pref-open .pref-icon-4 {background-position:left -27px}
+.pref-icon-5 {width:35px; height:35px; top:19px; background:url(../images/pref-icon-5.png)}
+.pref-open .pref-icon-5 {background-position:left -35px}
+.pref-icon-6 {width:45px; height:38px; top:18px; background:url(../images/pref-icon-6.png)}
+.pref-open .pref-icon-6 {background-position:left -38px}
+.pref-info {display:none; position:absolute; z-index:3; left:0; bottom:124px; background:#fff; width:260px; padding:34px 30px 28px 31px}
 .pref-info-right {left:auto; right:0}
 .pref-open .pref-info {display:block}
-.pref-arrow {display:none; position:absolute; z-index:3; left:63px; top:-9px; width:0; height:0; border-bottom:9px solid #1b1b1b; border-left:18px solid transparent; border-right:18px solid transparent}
+.pref-arrow {display:none; position:absolute; z-index:3; left:57px; top:-11px; width:0; height:0; border-bottom:11px solid #1b1b1b; border-left:22px solid transparent; border-right:22px solid transparent}
 .pref-open .pref-arrow {display:block}
 .pref-info-title {font:bold 18px/18px "Open Sans Condensed", sans-serif; text-transform:uppercase}
 .pref-info-text {padding:28px 0 0 0}
 
-#open {border:3px solid #f05033; padding:0 37px; width:740px; margin:35px auto 0 auto}
-.open-title {text-align:center; font:bold 36px/36px "Open Sans Condensed", sans-serif; text-transform:uppercase; padding:23px 0 0 0}
-.open-container {width:100%; padding:55px 0 32px 0}
+#about {width:980px; margin:0 auto; padding:69px 0 56px 0}
+.about-title {text-align:center; text-transform:uppercase; font:bold 36px/36px "Open Sans Condensed", sans-serif}
+.about-row {width:100%; padding:45px 0 24px 0}
+.about-row:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.about-col {float:left; width:260px; padding:0 20px 0 40px}
+.about-author {width:100%; padding:0 0 17px 0}
+.about-author:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.about-author-photo {float:left; width:60px; height:60px; position:relative; -moz-border-radius:30px; -webkit-border-radius:30px; -khtml-border-radius:30px; border-radius:30px; behavior:url(./js/PIE.htc)}
+.about-author-container {margin-left:75px}
+.about-author-name {text-transform:uppercase; font:bold 18px/18px "Open Sans Condensed", sans-serif; padding:11px 0 0 0; letter-spacing:0}
+.about-author-post {color:#f05033; padding:2px 0 0 0}
+.about-author-text {background:#f6f7f8; font-style:italic; padding:25px 20px 28px 20px; position:relative}
+.about-author-text:before {content:""; display:block; position:absolute; left:27px; top:-8px; width:0; height:0; border-bottom:8px solid #f6f7f8; border-right:8px solid transparent}
+.about-sep {height:8px; background:url(../images/about-sep.png); width:900px; margin:18px auto 11px auto}
+
+.map {border-top:3px solid #f05033; border-bottom:3px solid #f05033; height:500px; width:100%; position:relative}
+#map {height:500px; width:100%}
+
+.map-info {position:absolute; left:50%; top:93px; margin-left:-470px; width:216px; background:#1b1b1b; padding:30px 42px 35px 42px}
+.map-info-logo {line-height:0}
+.map-info-text {color:#fff; padding:19px 0 0 0}
+.map-info-text p {margin:0; padding:18px 0 0 0}
+.map-info-text strong {text-transform:uppercase; font:bold 18px/18px "Open Sans Condensed", sans-serif}
+
+footer {background:#1b1b1b}
+footer a:hover {color:#fff}
+
+.footer-inner {width:960px; margin:0 auto; padding:49px 0 0 20px}
+.footer-inner:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+
+.footer-col {float:left; width:240px}
+
+.footer-title {text-transform:uppercase; font:bold 18px/18px "Open Sans Condensed", sans-serif; color:#fff}
+
+.footer-menu {margin:0; padding:2px 0 0 0; list-style:none}
+.footer-menu li {margin:0; padding:9px 0 0 0}
+
+.instagram {line-height:0; margin:13px 0 0 0; width:100%; position:relative; overflow:hidden}
+
+.social {line-height:0; padding:13px 0 0 0}
+.social a {float:left; width:35px; height:35px; margin:0 10px 0 0; background:url(../images/social.png)}
+.social a.social-vk {background-position:left top}
+.social a.social-facebook {background-position:-35px top}
+.social a.social-twitter {background-position:-70px top}
+.social a.social-gplus {background-position:-105px top}
+
+.copyrights {background:#1b1b1b}
+.copyrights a:hover {color:#fff}
+.copyrights-inner {width:960px; padding:4px 0 37px 20px; margin:0 auto; color:#fff}
+.copyrights-inner p {margin:0; padding:0}
+
+.overlay {display:none; top:0; left:0; bottom:auto; right:auto; z-index:900; width:100%; height:100%; position:fixed; background:#1b1b1b; opacity:.75; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=75)}
+
+.window {display:none; position:fixed; z-index:999; left:50%; top:50%; margin:0 0 0 -410px; padding:0 40px; width:740px; background:#fff}
+.open-title {text-align:center; font:bold 36px/36px "Open Sans Condensed", sans-serif; text-transform:uppercase; padding:27px 0 0 0}
+.open-container {width:100%; padding:54px 0 35px 0}
 .open-container:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 .open-text {float:left; width:330px; padding:0 39px 1px 0; border-right:3px solid #eeeff2}
 .open-text-1 {text-transform:uppercase; font:bold 18px/24px "Open Sans Condensed", sans-serif; padding:6px 0 22px 0}
@@ -174,43 +232,6 @@ header {height:108px; background:#1b1b1b}
 .open-submit input {vertical-align:top; width:100%; height:35px; font:bold 14px/35px "Open Sans Condensed", sans-serif; color:#fff; text-transform:uppercase; border:none; background:#f05033; cursor:pointer; margin:0; padding:0; outline:none}
 .open-submit input:hover {background:#000}
 .open-hint {font-style:italic; padding:18px 0 0 10px; color:#a3a3a3}
-
-#about {width:980px; margin:0 auto; padding:63px 0 39px 0}
-.about-title {text-align:center; text-transform:uppercase; font:bold 36px/36px "Open Sans Condensed", sans-serif}
-.about-row {width:100%; padding:45px 0 24px 0}
-.about-row:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
-.about-col {float:left; width:260px; padding:0 20px 0 40px}
-.about-col p {margin:0; padding:18px 0 0 0}
-.about-col p:first-child {padding:0}
-.about-author {width:100%; padding:0 0 17px 0}
-.about-author:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
-.about-author-photo {float:left; width:60px; height:60px; position:relative; -moz-border-radius:30px; -webkit-border-radius:30px; -khtml-border-radius:30px; border-radius:30px; behavior:url(./js/PIE.htc)}
-.about-author-container {margin-left:75px}
-.about-author-name {text-transform:uppercase; font:bold 18px/18px "Open Sans Condensed", sans-serif; padding:11px 0 0 0; letter-spacing:0}
-.about-author-post {color:#f05033; padding:2px 0 0 0}
-.about-author-text {background:#f6f7f8; font-style:italic; padding:25px 20px 28px 20px; position:relative}
-.about-author-text:before {content:""; display:block; position:absolute; left:27px; top:-8px; width:0; height:0; border-bottom:8px solid #f6f7f8; border-right:8px solid transparent}
-
-#map {border-top:3px solid #f05033; border-bottom:3px solid #f05033; height:500px; width:100%}
-
-footer {width:960px; margin:0 auto; padding:49px 0 0 20px}
-footer:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
-
-.footer-col {float:left; width:240px}
-
-.footer-title {text-transform:uppercase; font:bold 18px/18px "Open Sans Condensed", sans-serif}
-
-.footer-menu {margin:0; padding:2px 0 0 0; list-style:none}
-.footer-menu li {margin:0; padding:9px 0 0 0}
-
-.instagram {line-height:0; margin:13px 0 0 0; width:100%; position:relative; overflow:hidden}
-
-.social {line-height:0; padding:13px 0 0 0}
-.social a {float:left; width:35px; height:35px; margin:0 10px 0 0; background:url(../images/social.png)}
-.social a.social-vk {background-position:left top}
-.social a.social-facebook {background-position:-35px top}
-.social a.social-twitter {background-position:-70px top}
-.social a.social-gplus {background-position:-105px top}
-
-.copyrights {width:960px; padding:4px 0 37px 20px; margin:0 auto}
-.copyrights p {margin:0; padding:0}
+.window-close {display:block; position:absolute; right:0; top:-31px; padding:0 37px 0 17px; height:31px; color:#fff; font:bold 12px/31px "Open Sans Condensed", sans-serif; text-transform:uppercase; background:#f05033}
+.window-close span {display:block; position:absolute; width:12px; height:12px; right:12px; top:9px; background:url(../images/window-close.png)}
+.window-close:hover span {background-position:left -12px}
