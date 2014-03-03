@@ -43,13 +43,24 @@ var timerSlider  = null;
             return false;
         });
 
+        var curHeight = $(window).height() - 198;
+        if (curHeight < 431) {
+            curHeight = 431;
+        }
+
+        $('#area, #area li').css({'min-height': curHeight});
+
         // слайдер
         $('.area-content').each(function() {
             var curSlider = $(this);
             curSlider.data('curIndex', 0);
             curSlider.data('disableAnimation', true);
             if (periodSlider > 0) {
-                timerSlider = window.setTimeout(sliderNext, periodSlider);
+                $(window).load(function() {
+                    $('.area-shadow').fadeOut(function() {
+                        timerSlider = window.setTimeout(sliderNext, periodSlider);
+                    });
+                });
             }
         });
 

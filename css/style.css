@@ -11,7 +11,7 @@ img {border:none}
 
 .wrapper {min-width:1000px; width:100%; position:relative; overflow:hidden}
 
-header {height:71px; background:#1b1b1b; position:relative; z-index:2}
+header {height:71px; background:#1b1b1b; position:relative; z-index:4}
 .header-inner {width:980px; margin:0 auto; position:relative}
 .header-inner:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 
@@ -28,7 +28,8 @@ header {height:71px; background:#1b1b1b; position:relative; z-index:2}
 .header-menu li a {height:35px; color:#fff; font:bold 14px/35px "Open Sans Condensed", sans-serif; text-transform:uppercase}
 .header-menu li.active a {text-decoration:none; cursor:default}
 
-#area {position:relative; width:100%; overflow:hidden}
+#area {position:relative; width:100%; overflow:hidden; height:523px}
+.area-shadow {position:absolute; left:0; top:0; width:100%; height:100%; background:#000 url(../images/fancybox_loading.gif) no-repeat center; z-index:2}
 .area-content {width:100%; position:relative}
 .area-content ul {margin:0; padding:0; list-style:none; position:relative; width:100%}
 .area-content ul li {margin:0; padding:0; position:absolute; left:-9999px; top:-9999px; width:100%}
