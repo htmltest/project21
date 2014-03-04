@@ -37,6 +37,9 @@ header {height:71px; background:#1b1b1b; position:relative; z-index:4}
 .area-img {position:absolute; width:100%}
 .area-inner {position:absolute}
 .area-order {display:block; position:absolute; left:50%; margin-left:-165px; bottom:37px; width:330px; height:35px; text-transform:uppercase; z-index:2; color:#fff; text-align:center; font:bold 14px/35px "Open Sans Condensed", sans-serif; background:#f05033}
+.area-ctrl {position:absolute; right:64px; bottom:46px; z-index:2}
+.area-ctrl a {float:left; margin:0 0 0 5px; width:14px; height:14px; border:2px solid #fff}
+.area-ctrl a.active {background:#fff}
 .area-info {position:absolute}
 .area-info-open {z-index:3}
 .area-icon {width:31px; height:31px; background:url(../images/area-icon.png); cursor:pointer}

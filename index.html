@@ -43,6 +43,8 @@
             <section id="area">
                 <div class="area-shadow"></div>
                 <a href="#" class="area-order">Получить бесплатный день работы и капучино</a>
+                <div class="area-ctrl">
+                </div>
                 <div class="area-content">
                     <ul>
                         <li>
@@ -827,8 +829,11 @@
                     function init () {
                         myMap = new ymaps.Map('map', {
                             center: [56.136, 40.390],
-                            zoom: 16
+                            zoom: 14
                         });
+
+                        myMap.controls
+                            .add('zoomControl');
 
                         var myGeocoder = ymaps.geocode('Москва, Бутырская улица, 56');
                         myGeocoder.then(

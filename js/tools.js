@@ -2,6 +2,7 @@ var speedSlider  = 500;     // скорость смены слайда на г�
 var periodSlider = 5000;    // период автоматической смены слайда на главной страницы ("0" - автоматическая смена отключена)
 
 var timerSlider  = null;
+var cursorOnArea = false;
 
 (function($) {
 
@@ -55,27 +56,37 @@ var timerSlider  = null;
             var curSlider = $(this);
             curSlider.data('curIndex', 0);
             curSlider.data('disableAnimation', true);
+
+            var curHTML = '';
+            curSlider.find('li').each(function() {
+                curHTML += '<a href="#"></a>';
+            });
+            $('.area-ctrl').html(curHTML);
+            $('.area-ctrl a:first').addClass('active');
+
             if (periodSlider > 0) {
-                $(window).load(function() {
+                $(window).load(function(e) {
                     $('.area-shadow').fadeOut(function() {
-                        timerSlider = window.setTimeout(sliderNext, periodSlider);
+                        if (!cursorOnArea) {
+                            timerSlider = window.setTimeout(sliderNext, periodSlider);
+                        }
                     });
                 });
             }
         });
 
-        $('#area').hover(
-            function() {
+        $(document).mousemove(function(e) {
+            if ($(e.target).parents().filter('#area').length == 1) {
+                cursorOnArea = true;
                 window.clearTimeout(timerSlider);
                 timerSlider = null;
-            },
-
-            function() {
-                if (periodSlider > 0) {
+            } else {
+                if (periodSlider > 0 && cursorOnArea) {
+                    cursorOnArea = false;
                     timerSlider = window.setTimeout(sliderNext, periodSlider);
                 }
             }
-        );
+        });
 
         // информация по пространству
         $('.area-icon').click(function() {
@@ -86,6 +97,41 @@ var timerSlider  = null;
                 $('.area-info-open').removeClass('area-info-open');
                 curInfo.addClass('area-info-open');
             }
+        });
+
+        $(document).click(function(e) {
+            if ($(e.target).parents().filter('.area-info').length == 0) {
+                $('.area-info-open').removeClass('area-info-open');
+            }
+        });
+
+        $('.area-ctrl a').live('click', function() {
+            window.clearTimeout(timerSlider);
+            timerSlider = null;
+
+            var curSlider = $('.area-content');
+            if (curSlider.data('disableAnimation')) {
+                var curIndex = curSlider.data('curIndex');
+                var newIndex = $('.area-ctrl a').index($(this));
+
+                curSlider.data('curIndex', newIndex);
+                curSlider.data('disableAnimation', false);
+                $('.area-ctrl a.active').removeClass('active');
+                $('.area-ctrl a').eq(newIndex).addClass('active');
+                curSlider.find('ul li').eq(curIndex).css({'z-index': 1});
+                curSlider.find('ul li').eq(newIndex).css({'z-index': 'auto', 'left': 0, 'top': 0}).show();
+                curSlider.find('ul li').eq(curIndex).fadeOut(speedSlider, function() {
+                    curSlider.find('ul li').eq(curIndex).find('.area-info-open').removeClass('area-info-open');
+                    curSlider.data('disableAnimation', true);
+                    if (periodSlider > 0) {
+                        if (!cursorOnArea) {
+                            timerSlider = window.setTimeout(sliderNext, periodSlider);
+                        }
+                    }
+                });
+            }
+
+            return false;
         });
 
         // тарифы
@@ -329,13 +375,17 @@ var timerSlider  = null;
 
             curSlider.data('curIndex', newIndex);
             curSlider.data('disableAnimation', false);
+            $('.area-ctrl a.active').removeClass('active');
+            $('.area-ctrl a').eq(newIndex).addClass('active');
             curSlider.find('ul li').eq(curIndex).css({'z-index': 1});
             curSlider.find('ul li').eq(newIndex).css({'z-index': 'auto', 'left': 0, 'top': 0}).show();
             curSlider.find('ul li').eq(curIndex).fadeOut(speedSlider, function() {
                 curSlider.find('ul li').eq(curIndex).find('.area-info-open').removeClass('area-info-open');
                 curSlider.data('disableAnimation', true);
                 if (periodSlider > 0) {
-                    timerSlider = window.setTimeout(sliderNext, periodSlider);
+                    if (!cursorOnArea) {
+                        timerSlider = window.setTimeout(sliderNext, periodSlider);
+                    }
                 }
             });
         }
