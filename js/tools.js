@@ -223,6 +223,8 @@ var cursorOnArea = false;
         });
 
         // премущества
+        $('.pref-info:last').addClass('pref-info-right');
+
         $('.pref-link').click(function() {
             var curPref = $(this).parent();
             if (curPref.hasClass('pref-open')) {
