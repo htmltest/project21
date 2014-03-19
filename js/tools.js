@@ -236,6 +236,12 @@ var cursorOnArea = false;
             return false;
         });
 
+        $(document).click(function(e) {
+            if ($(e.target).parents().filter('.pref').length == 0) {
+                $('.pref-open').removeClass('pref-open');
+            }
+        });
+
         // подсказка в полях формы
         $('.open-input input').each(function() {
             if ($(this).val() == '') {

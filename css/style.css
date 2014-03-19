@@ -141,8 +141,8 @@ header {height:71px; background:#1b1b1b; position:relative; z-index:4}
 .prefs-inner:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 .pref {float:left; width:159px; padding:0 1px 0 0; background:url(../images/prefs-sep.png) no-repeat right top; position:relative}
 .pref-link {display:block; width:159px; height:124px; color:#fff; text-align:center; font:bold 12px/18px "Open Sans Condensed", sans-serif; text-transform:uppercase}
-.pref-open .pref-link {color:#f05033}
 .pref-link:hover {color:#fff}
+.pref-open .pref-link {color:#f05033}
 .pref-link span {display:block; height:72px; position:relative}
 .pref-link strong {display:block; margin:0 auto; position:relative}
 .pref-icon-1 {width:23px; height:34px; top:21px; background:url(../images/pref-icon-1.png)}
