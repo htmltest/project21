@@ -259,6 +259,14 @@ var cursorOnArea = false;
             }
         });
 
+        // checkbox
+        $('.open-checkbox input:checked').parent().addClass('checked');
+        $('.open-checkbox div').click(function() {
+            var curSpan = $(this).find('span');
+            curSpan.toggleClass('checked');
+            curSpan.find('input').prop('checked', curSpan.hasClass('checked')).trigger('change');
+        });
+
         // валидация формы открытой недели
         $('.open-form form').validate();
 
