@@ -322,6 +322,57 @@ var cursorOnArea = false;
             }
         });
 
+        // тариф в виде таблицы
+        $('.plans-table-group').each(function() {
+            $(this).prev().addClass('plans-table-group-pre');
+        });
+
+        $('.plans-table tr:last').addClass('plans-table-tr-last');
+
+        $('.plans-table tbody tr:first-child td span').parent().css({'vertical-align': 'middle'});
+
+        $('.plans-table tr').each(function() {
+            $(this).find('td:gt(0)').hover(
+                function() {
+                    var curTD = $(this);
+                    var curTR = curTD.parent();
+                    var curIndex = curTR.find('td').index($(this));
+                    $('.plans-table tr').each(function() {
+                        $(this).find('td').eq(curIndex).addClass('hover');
+                    });
+                },
+
+                function() {
+                    var curTD = $(this);
+                    var curTR = curTD.parent();
+                    var curIndex = curTR.find('td').index($(this));
+                    $('.plans-table tr').each(function() {
+                        $(this).find('td').eq(curIndex).removeClass('hover');
+                    });
+                }
+            );
+
+            $(this).find('th:gt(0)').hover(
+                function() {
+                    var curTD = $(this);
+                    var curTR = curTD.parent();
+                    var curIndex = curTR.find('th').index($(this));
+                    $('.plans-table tr').each(function() {
+                        $(this).find('td').eq(curIndex).addClass('hover');
+                    });
+                },
+
+                function() {
+                    var curTD = $(this);
+                    var curTR = curTD.parent();
+                    var curIndex = curTR.find('th').index($(this));
+                    $('.plans-table tr').each(function() {
+                        $(this).find('td').eq(curIndex).removeClass('hover');
+                    });
+                }
+            );
+        });
+
     });
 
     // пространство

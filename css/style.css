@@ -113,6 +113,28 @@ header {height:71px; background:#1b1b1b; position:relative; z-index:4}
 .plans-tabs-add-email a {color:#fff; text-decoration:underline}
 .plans-tabs-add-email a:hover {text-decoration:none}
 
+.plans-table {background:#fff; margin:0 0 16px 0}
+.plans-table table {width:100%; margin:0; border-collapse:collapse}
+.plans-table table th {vertical-align:top; text-align:left; padding:0 0 0 32px; width:97px; font-weight:normal; height:116px; background:#1b1b1b url(../images/plans-table-head-sep.png) no-repeat}
+.plans-table table th:first-child {background:#1b1b1b; width:auto; padding:0}
+.plans-table-head-title {font:bold 14px/14px "Open Sans Condensed", sans-serif; text-transform:uppercase; color:#fff; padding:19px 0 0 0}
+.plans-table-head-price {font:bold 24px/24px "Open Sans Condensed", sans-serif; text-transform:uppercase; color:#e65032; margin:0 0 0 -2px}
+.plans-table-head-price span {background:url(../images/rub.png) repeat-x left 32px}
+.plans-table-head-oldprice {padding:7px 0 0 0; font:bold 11px/14px "Open Sans Condensed", sans-serif; text-transform:uppercase; color:#e65032; text-decoration:line-through; opacity:.5; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50)}
+.plans-table-head-old {font-size:11px; line-height:14px; color:#808080; opacity:.5; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50)}
+.plans-table table td {vertical-align:top; text-align:center; padding:8px 10px 9px 10px; font-size:12px; line-height:18px}
+.plans-table table td:first-child {font-size:14px; text-align:left}
+.plans-table table tr.plans-table-group td {font:bold 18px/18px "Open Sans Condensed", sans-serif; text-transform:uppercase; background:#f6f7f8 url(../images/plans-table-group.png) repeat-y; padding:7px 0 8px 10px; text-align:center}
+.plans-table table tr.plans-table-group+tr td {padding-top:26px}
+.plans-table table tr.plans-table-group-pre td {padding-bottom:46px}
+.plans-table table tr.plans-table-tr-last td {padding-bottom:26px}
+.plans-table table tbody tr:first-child td {padding-top:18px; padding-bottom:28px}
+.plans-table-yes {display:block; margin:1px auto 0 auto; width:23px; height:18px; background:url(../images/plans-table-yes.png)}
+.plans-table-no {display:block; margin:10px auto 0 auto; width:14px; height:1px; background:#989898; position:relative; overflow:hidden}
+.plans-table table td.hover {background:#f05033; color:#fff}
+.plans-table table td.hover .plans-table-yes {background-position:left -18px}
+.plans-table table td.hover .plans-table-no {background:#fff}
+
 #events {display:none; background:url(../images/plans.jpg) center top; padding:72px 0 81px 0}
 .events-title {width:204px; height:71px; margin:0 auto; background:#fff; text-align:center; font:bold 36px/71px "Open Sans Condensed", sans-serif; text-transform:uppercase}
 
