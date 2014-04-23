@@ -373,6 +373,19 @@ var cursorOnArea = false;
             );
         });
 
+        // полоса "наверх"
+        $(document).mousemove(function(e) {
+            if (e.pageX > $(window).width() - 90) {
+                $('.up').show();
+            } else {
+                $('.up').hide();
+            }
+        });
+
+        $('.up').click(function() {
+            $.scrollTo(0, 500);
+        });
+
     });
 
     // пространство
