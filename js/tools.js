@@ -246,17 +246,17 @@ var cursorOnArea = false;
         });
 
         // подсказка в полях формы
-        $('.open-input input').each(function() {
+        $('.open-input input, .area-form input').each(function() {
             if ($(this).val() == '') {
                 $(this).parent().find('span').css({'display': 'block'});
             }
         });
 
-        $('.open-input input').focus(function() {
+        $('.open-input inputt, .area-form input').focus(function() {
             $(this).parent().find('span').css({'display': 'none'});
         });
 
-        $('.open-input input').blur(function() {
+        $('.open-input inputt, .area-form input').blur(function() {
             if ($(this).val() == '') {
                 $(this).parent().find('span').css({'display': 'block'});
             }
@@ -272,6 +272,9 @@ var cursorOnArea = false;
 
         // валидация формы открытой недели
         $('.open-form form').validate();
+
+        // валидация формы бесплатного дня
+        $('.area-form form').validate();
 
         // меню подвале
         $('.footer-menu').eq(0).find('a').click(function() {
@@ -296,8 +299,28 @@ var cursorOnArea = false;
             return false;
         });
 
+        // тарифы на главной
+        if (Modernizr.touch) {
+            $('.main-plans-item').addClass('mobile');
+            $('.main-plans-item').click(function() {
+                var curBlock = $(this);
+                if (curBlock.hasClass('active')) {
+                    curBlock.removeClass('active');
+                } else {
+                    $('.main-plans-item').removeClass('active');
+                    curBlock.addClass('active');
+                }
+            });
+
+            $(document).click(function(e) {
+                if ($(e.target).parents().filter('.main-plans-item').length == 0 && !$(e.target).hasClass('main-plans-item')) {
+                    $('.main-plans-item').removeClass('active');
+                }
+            });
+        }
+
         // окно формы
-        $('.area-order').click(function() {
+        $('.main-plans-item-order a, .plans-tabs-descr-order a, .plans-table-head-order a').click(function() {
             $('.window').show();
             $('.window').css({'margin-top': -$('.window').height() / 2});
             $('.overlay').show();
@@ -337,6 +360,7 @@ var cursorOnArea = false;
                     var curTD = $(this);
                     var curTR = curTD.parent();
                     var curIndex = curTR.find('td').index($(this));
+                    $('.plans-table th').eq(curIndex).addClass('hover');
                     $('.plans-table tr').each(function() {
                         $(this).find('td').eq(curIndex).addClass('hover');
                     });
@@ -346,6 +370,7 @@ var cursorOnArea = false;
                     var curTD = $(this);
                     var curTR = curTD.parent();
                     var curIndex = curTR.find('td').index($(this));
+                    $('.plans-table th').eq(curIndex).removeClass('hover');
                     $('.plans-table tr').each(function() {
                         $(this).find('td').eq(curIndex).removeClass('hover');
                     });
@@ -357,6 +382,7 @@ var cursorOnArea = false;
                     var curTD = $(this);
                     var curTR = curTD.parent();
                     var curIndex = curTR.find('th').index($(this));
+                    $('.plans-table th').eq(curIndex).addClass('hover');
                     $('.plans-table tr').each(function() {
                         $(this).find('td').eq(curIndex).addClass('hover');
                     });
@@ -366,6 +392,7 @@ var cursorOnArea = false;
                     var curTD = $(this);
                     var curTR = curTD.parent();
                     var curIndex = curTR.find('th').index($(this));
+                    $('.plans-table th').eq(curIndex).removeClass('hover');
                     $('.plans-table tr').each(function() {
                         $(this).find('td').eq(curIndex).removeClass('hover');
                     });
@@ -444,6 +471,17 @@ var cursorOnArea = false;
             }
         });
         $('.about-author-text').css({'min-height': curMax});
+    });
+
+    // блоки тарифов на главной
+    $(window).bind('load', function() {
+        var curMax = 0;
+        $('.main-plans-item-inner').each(function() {
+            if ($(this).height() > curMax) {
+                curMax = $(this).height();
+            }
+        });
+        $('.main-plans-item-inner').css({'min-height': curMax});
     });
 
     // переход к следующему слайду

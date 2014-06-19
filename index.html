@@ -14,7 +14,8 @@
         <script src="js/jquery-1.8.2.min.js"></script>
         <script src="js/jquery.validate.min.js"></script>
         <script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
-        <script src="js/tools.js"></script>
+         <script src="js/modernizr.custom.90364.js"></script>
+       <script src="js/tools.js"></script>
 
         <meta name="viewport" content="width=1024" />
     </head>
@@ -42,9 +43,18 @@
             <!-- area -->
             <section id="area">
                 <div class="area-shadow"></div>
-                <a href="#" class="area-order">Получить бесплатный день работы и капучино</a>
-                <div class="area-ctrl">
+                <div class="area-form">
+                    <form action="#" method="post">
+                        <div class="area-form-title">Получить бесплатный день работы</div>
+                        <div class="area-form-text">Работать, пользоваться переговорными и пить кофе в «Коворке на крыше» <span>абсолютно бесплатно</span></div>
+                        <div class="area-form-row">
+                            <div class="area-form-input"><span>Имя</span><input type="text" name="name" value="" class="required" /></div>
+                            <div class="area-form-input"><span>Электронная почта</span><input type="email" name="email" value="" class="required email" /></div>
+                            <div class="area-form-submit"><input type="submit" value="Отправить" /></div>
+                        </div>
+                    </form>
                 </div>
+                <div class="area-ctrl"></div>
                 <div class="area-content">
                     <ul>
                         <li>
@@ -254,7 +264,16 @@
                                 <!-- plans tabs container -->
                                 <div class="plans-tabs-container">
                                     <div class="plans-tabs-content">
-                                        <div class="plans-tabs-descr">Работа в Коворке в течение одного неполного дня (день покупки) и следующего за ним полного рабочего дня.</div>
+                                        <div class="plans-tabs-descr">
+                                            <div class="plans-tabs-descr-inner">
+                                                <div class="plans-tabs-descr-price">
+                                                    <div class="plans-tabs-descr-price-name">Офис</div>
+                                                    <div class="plans-tabs-descr-price-value">15000 <span>Р</span></div>
+                                                </div>
+                                                <div class="plans-tabs-descr-text">Клубный абонемент на офисное и почтовое обслуживание в течение 3 месяцев и 25 рабочих дней в Коворке по удобному вам графику.</div>
+                                                <div class="plans-tabs-descr-order"><a href="#">Заказать</a></div>
+                                            </div>
+                                        </div>
                                         <div class="plans-tabs-cols">
                                             <div class="plans-tabs-col">
                                                 <div class="plans-tabs-col-title">Обеспечение рабочего процесса</div>
@@ -292,7 +311,16 @@
                                     </div>
 
                                     <div class="plans-tabs-content">
-                                        <div class="plans-tabs-descr">Работа в Коворке в течение одного неполного дня (день покупки) и следующего за ним полного рабочего дня.</div>
+                                        <div class="plans-tabs-descr">
+                                            <div class="plans-tabs-descr-inner">
+                                                <div class="plans-tabs-descr-price">
+                                                    <div class="plans-tabs-descr-price-name">Офис Плюс</div>
+                                                    <div class="plans-tabs-descr-price-value">18000 <span>Р</span></div>
+                                                </div>
+                                                <div class="plans-tabs-descr-text">Клубный абонемент на офисное и почтовое обслуживание в течение 3 месяцев и 25 рабочих дней в Коворке по удобному вам графику.</div>
+                                                <div class="plans-tabs-descr-order"><a href="#">Заказать</a></div>
+                                            </div>
+                                        </div>
                                         <div class="plans-tabs-cols">
                                             <div class="plans-tabs-col">
                                                 <div class="plans-tabs-col-title">Обеспечение рабочего процесса</div>
@@ -330,7 +358,16 @@
                                     </div>
 
                                     <div class="plans-tabs-content active">
-                                        <div class="plans-tabs-descr">Работа в Коворке в течение одного неполного дня (день покупки) и следующего за ним полного рабочего дня.</div>
+                                        <div class="plans-tabs-descr">
+                                            <div class="plans-tabs-descr-inner">
+                                                <div class="plans-tabs-descr-price">
+                                                    <div class="plans-tabs-descr-price-name">Клуб 1</div>
+                                                    <div class="plans-tabs-descr-price-value">1000 <span>Р</span></div>
+                                                </div>
+                                                <div class="plans-tabs-descr-text">Клубный абонемент на офисное и почтовое обслуживание в течение 3 месяцев и 25 рабочих дней в Коворке по удобному вам графику.</div>
+                                                <div class="plans-tabs-descr-order"><a href="#">Заказать</a></div>
+                                            </div>
+                                        </div>
                                         <div class="plans-tabs-cols">
                                             <div class="plans-tabs-col">
                                                 <div class="plans-tabs-col-title">Обеспечение рабочего процесса</div>
@@ -368,7 +405,16 @@
                                     </div>
 
                                     <div class="plans-tabs-content">
-                                        <div class="plans-tabs-descr">Работа в Коворке в течение одного неполного дня (день покупки) и следующего за ним полного рабочего дня.</div>
+                                        <div class="plans-tabs-descr">
+                                            <div class="plans-tabs-descr-inner">
+                                                <div class="plans-tabs-descr-price">
+                                                    <div class="plans-tabs-descr-price-name">Клуб 5</div>
+                                                    <div class="plans-tabs-descr-price-value">4000 <span>Р</span></div>
+                                                </div>
+                                                <div class="plans-tabs-descr-text">Клубный абонемент на офисное и почтовое обслуживание в течение 3 месяцев и 25 рабочих дней в Коворке по удобному вам графику.</div>
+                                                <div class="plans-tabs-descr-order"><a href="#">Заказать</a></div>
+                                            </div>
+                                        </div>
                                         <div class="plans-tabs-cols">
                                             <div class="plans-tabs-col">
                                                 <div class="plans-tabs-col-title">Обеспечение рабочего процесса</div>
@@ -406,7 +452,16 @@
                                     </div>
 
                                     <div class="plans-tabs-content">
-                                        <div class="plans-tabs-descr">Работа в Коворке в течение одного неполного дня (день покупки) и следующего за ним полного рабочего дня.</div>
+                                        <div class="plans-tabs-descr">
+                                            <div class="plans-tabs-descr-inner">
+                                                <div class="plans-tabs-descr-price">
+                                                    <div class="plans-tabs-descr-price-name">Клуб 10</div>
+                                                    <div class="plans-tabs-descr-price-value">8000 <span>Р</span></div>
+                                                </div>
+                                                <div class="plans-tabs-descr-text">Клубный абонемент на офисное и почтовое обслуживание в течение 3 месяцев и 25 рабочих дней в Коворке по удобному вам графику.</div>
+                                                <div class="plans-tabs-descr-order"><a href="#">Заказать</a></div>
+                                            </div>
+                                        </div>
                                         <div class="plans-tabs-cols">
                                             <div class="plans-tabs-col">
                                                 <div class="plans-tabs-col-title">Обеспечение рабочего процесса</div>
@@ -444,7 +499,16 @@
                                     </div>
 
                                     <div class="plans-tabs-content">
-                                        <div class="plans-tabs-descr">Работа в Коворке в течение одного неполного дня (день покупки) и следующего за ним полного рабочего дня.</div>
+                                        <div class="plans-tabs-descr">
+                                            <div class="plans-tabs-descr-inner">
+                                                <div class="plans-tabs-descr-price">
+                                                    <div class="plans-tabs-descr-price-name">Клуб 20</div>
+                                                    <div class="plans-tabs-descr-price-value">15000 <span>Р</span></div>
+                                                </div>
+                                                <div class="plans-tabs-descr-text">Клубный абонемент на офисное и почтовое обслуживание в течение 3 месяцев и 25 рабочих дней в Коворке по удобному вам графику.</div>
+                                                <div class="plans-tabs-descr-order"><a href="#">Заказать</a></div>
+                                            </div>
+                                        </div>
                                         <div class="plans-tabs-cols">
                                             <div class="plans-tabs-col">
                                                 <div class="plans-tabs-col-title">Обеспечение рабочего процесса</div>
@@ -495,43 +559,96 @@
                                         <tr>
                                             <th></th>
                                             <th>
-                                                <div class="plans-table-head-title">Офис</div>
-                                                <div class="plans-table-head-price">15000 <span>Р</span></div>
-                                                <div class="plans-table-head-oldprice">20000 Р</div>
-                                                <div class="plans-table-head-old">Старая цена</div>
+                                                <div class="plans-table-head-inner">
+                                                    <div class="plans-table-head-order"><a href="#">Заказать</a></div>
+                                                    <div class="plans-table-head-title">Офис</div>
+                                                    <div class="plans-table-head-price">15000 <span>Р</span></div>
+                                                    <div class="plans-table-head-oldprice">20000 Р</div>
+                                                    <div class="plans-table-head-old">Старая цена</div>
+                                                </div>
                                             </th>
                                             <th>
-                                                <div class="plans-table-head-title">Офис плюс</div>
-                                                <div class="plans-table-head-price">18000 <span>Р</span></div>
-                                                <div class="plans-table-head-oldprice">23000 Р</div>
-                                                <div class="plans-table-head-old">Старая цена</div>
+                                                <div class="plans-table-head-inner">
+                                                    <div class="plans-table-head-order"><a href="#">Заказать</a></div>
+                                                    <div class="plans-table-head-title">Офис плюс</div>
+                                                    <div class="plans-table-head-price">18000 <span>Р</span></div>
+                                                    <div class="plans-table-head-oldprice">23000 Р</div>
+                                                    <div class="plans-table-head-old">Старая цена</div>
+                                                </div>
                                             </th>
                                             <th>
-                                                <div class="plans-table-head-title">Клуб 1</div>
-                                                <div class="plans-table-head-price">1000 <span>Р</span></div>
-                                                <div class="plans-table-head-oldprice">2500 Р</div>
-                                                <div class="plans-table-head-old">Старая цена</div>
+                                                <div class="plans-table-head-inner">
+                                                    <div class="plans-table-head-order"><a href="#">Заказать</a></div>
+                                                    <div class="plans-table-head-title">Клуб 1</div>
+                                                    <div class="plans-table-head-price">1000 <span>Р</span></div>
+                                                    <div class="plans-table-head-oldprice">2500 Р</div>
+                                                    <div class="plans-table-head-old">Старая цена</div>
+                                                </div>
                                             </th>
                                             <th>
-                                                <div class="plans-table-head-title">Клуб 5</div>
-                                                <div class="plans-table-head-price">4000 <span>Р</span></div>
-                                                <div class="plans-table-head-oldprice">5000 Р</div>
-                                                <div class="plans-table-head-old">Старая цена</div>
+                                                <div class="plans-table-head-inner">
+                                                    <div class="plans-table-head-order"><a href="#">Заказать</a></div>
+                                                    <div class="plans-table-head-title">Клуб 5</div>
+                                                    <div class="plans-table-head-price">4000 <span>Р</span></div>
+                                                    <div class="plans-table-head-oldprice">5000 Р</div>
+                                                    <div class="plans-table-head-old">Старая цена</div>
+                                                </div>
                                             </th>
                                             <th>
-                                                <div class="plans-table-head-title">Клуб 10</div>
-                                                <div class="plans-table-head-price">8000 <span>Р</span></div>
-                                                <div class="plans-table-head-oldprice">10000 Р</div>
-                                                <div class="plans-table-head-old">Старая цена</div>
+                                                <div class="plans-table-head-inner">
+                                                    <div class="plans-table-head-order"><a href="#">Заказать</a></div>
+                                                    <div class="plans-table-head-title">Клуб 10</div>
+                                                    <div class="plans-table-head-price">8000 <span>Р</span></div>
+                                                    <div class="plans-table-head-oldprice">10000 Р</div>
+                                                    <div class="plans-table-head-old">Старая цена</div>
+                                                </div>
                                             </th>
                                             <th>
-                                                <div class="plans-table-head-title">Клуб 20</div>
-                                                <div class="plans-table-head-price">15000 <span>Р</span></div>
-                                                <div class="plans-table-head-oldprice">20000 Р</div>
-                                                <div class="plans-table-head-old">Старая цена</div>
+                                                <div class="plans-table-head-inner">
+                                                    <div class="plans-table-head-order"><a href="#">Заказать</a></div>
+                                                    <div class="plans-table-head-title">Клуб 20</div>
+                                                    <div class="plans-table-head-price">15000 <span>Р</span></div>
+                                                    <div class="plans-table-head-oldprice">20000 Р</div>
+                                                    <div class="plans-table-head-old">Старая цена</div>
+                                                </div>
                                             </th>
                                         </tr>
                                     </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <div class="plans-table-head-inner">
+                                                    <div class="plans-table-head-order"><a href="#">Заказать</a></div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="plans-table-head-inner">
+                                                    <div class="plans-table-head-order"><a href="#">Заказать</a></div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="plans-table-head-inner">
+                                                    <div class="plans-table-head-order"><a href="#">Заказать</a></div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="plans-table-head-inner">
+                                                    <div class="plans-table-head-order"><a href="#">Заказать</a></div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="plans-table-head-inner">
+                                                    <div class="plans-table-head-order"><a href="#">Заказать</a></div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="plans-table-head-inner">
+                                                    <div class="plans-table-head-order"><a href="#">Заказать</a></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
                                     <tbody>
                                         <tr>
                                             <td></td>
@@ -975,6 +1092,53 @@
                 </div>
             </section>
             <!-- prefs END -->
+
+            <!-- main plans -->
+            <section id="main-plans">
+                <div class="main-plans-inner">
+                    <div class="main-plans-item">
+                        <div class="main-plans-item-inner">
+                            <div class="main-plans-item-title">офис на месяц</div>
+                            <div class="main-plans-item-price">12000 <span>Р</span></div>
+                            <div class="main-plans-item-oldprice">2500 Р</div>
+                            <div class="main-plans-item-old">Старая цена</div>
+                            <div class="main-plans-item-descr">Базовый пакет офисных услуг, который включает все необходимое для каждодневной эффективной работы.</div>
+                            <div class="main-plans-item-order"><a href="#">Заказать</a></div>
+                        </div>
+                    </div>
+                    <div class="main-plans-item">
+                        <div class="main-plans-item-inner">
+                            <div class="main-plans-item-title">офис+ на месяц</div>
+                            <div class="main-plans-item-price">14500 <span>Р</span></div>
+                            <div class="main-plans-item-oldprice">23000 Р</div>
+                            <div class="main-plans-item-old">Старая цена</div>
+                            <div class="main-plans-item-descr">Персональное рабочее место, закрепленное за резидентом, в тихой зоне с более комфортной мебелью и более свободной рассадкой.</div>
+                            <div class="main-plans-item-order"><a href="#">Заказать</a></div>
+                        </div>
+                    </div>
+                    <div class="main-plans-item">
+                        <div class="main-plans-item-inner">
+                            <div class="main-plans-item-title">клуб на месяц</div>
+                            <div class="main-plans-item-price">12000 <span>Р</span></div>
+                            <div class="main-plans-item-oldprice">2500 Р</div>
+                            <div class="main-plans-item-old">Старая цена</div>
+                            <div class="main-plans-item-descr">Возможность работы в клубной зоне Коворка в течение месяца.</div>
+                            <div class="main-plans-item-order"><a href="#">Заказать</a></div>
+                        </div>
+                    </div>
+                    <div class="main-plans-item">
+                        <div class="main-plans-item-inner">
+                            <div class="main-plans-item-title">клуб на 3 месяца</div>
+                            <div class="main-plans-item-price">9500 <span>Р</span></div>
+                            <div class="main-plans-item-oldprice">5000 Р</div>
+                            <div class="main-plans-item-old">Старая цена</div>
+                            <div class="main-plans-item-descr">Клубный абонемент на офисное и почтовое обслуживание в течение 3 месяцев и 25 рабочих дней в Коворке по удобному вам графику.</div>
+                            <div class="main-plans-item-order"><a href="#">Заказать</a></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- main plans END -->
 
             <!-- about -->
             <section id="about">
