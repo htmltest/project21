@@ -354,51 +354,96 @@ var cursorOnArea = false;
 
         $('.plans-table tbody tr:first-child td span').parent().css({'vertical-align': 'middle'});
 
-        $('.plans-table tr').each(function() {
-            $(this).find('td:gt(0)').hover(
-                function() {
+        if (Modernizr.touch) {
+            $('.plans-table tr').each(function() {
+                $(this).find('td:gt(0)').click(function() {
                     var curTD = $(this);
-                    var curTR = curTD.parent();
-                    var curIndex = curTR.find('td').index($(this));
-                    $('.plans-table th').eq(curIndex).addClass('hover');
-                    $('.plans-table tr').each(function() {
-                        $(this).find('td').eq(curIndex).addClass('hover');
-                    });
-                },
+                    if (curTD.hasClass('hover')) {
+                        $('.plans-table th').removeClass('hover');
+                        $('.plans-table td').removeClass('hover');
+                    } else {
+                        $('.plans-table th').removeClass('hover');
+                        $('.plans-table td').removeClass('hover');
+                        var curTR = curTD.parent();
+                        var curIndex = curTR.find('td').index($(this));
+                        $('.plans-table th').eq(curIndex).addClass('hover');
+                        $('.plans-table tr').each(function() {
+                            $(this).find('td').eq(curIndex).addClass('hover');
+                        });
+                    }
+                });
 
-                function() {
+                $(this).find('th:gt(0)').click(function() {
                     var curTD = $(this);
-                    var curTR = curTD.parent();
-                    var curIndex = curTR.find('td').index($(this));
-                    $('.plans-table th').eq(curIndex).removeClass('hover');
-                    $('.plans-table tr').each(function() {
-                        $(this).find('td').eq(curIndex).removeClass('hover');
-                    });
-                }
-            );
+                    if (curTD.hasClass('hover')) {
+                        $('.plans-table th').removeClass('hover');
+                        $('.plans-table td').removeClass('hover');
+                    } else {
+                        $('.plans-table th').removeClass('hover');
+                        $('.plans-table td').removeClass('hover');
+                        var curTR = curTD.parent();
+                        var curIndex = curTR.find('th').index($(this));
+                        $('.plans-table th').eq(curIndex).addClass('hover');
+                        $('.plans-table tr').each(function() {
+                            $(this).find('td').eq(curIndex).addClass('hover');
+                        });
+                    }
+                });
 
-            $(this).find('th:gt(0)').hover(
-                function() {
-                    var curTD = $(this);
-                    var curTR = curTD.parent();
-                    var curIndex = curTR.find('th').index($(this));
-                    $('.plans-table th').eq(curIndex).addClass('hover');
-                    $('.plans-table tr').each(function() {
-                        $(this).find('td').eq(curIndex).addClass('hover');
-                    });
-                },
+                $(document).click(function(e) {
+                    if ($(e.target).parents().filter('.plans-table').length == 0) {
+                        $('.plans-table th').removeClass('hover');
+                        $('.plans-table td').removeClass('hover');
+                    }
+                });
+            });
+        } else {
+            $('.plans-table tr').each(function() {
+                $(this).find('td:gt(0)').hover(
+                    function() {
+                        var curTD = $(this);
+                        var curTR = curTD.parent();
+                        var curIndex = curTR.find('td').index($(this));
+                        $('.plans-table th').eq(curIndex).addClass('hover');
+                        $('.plans-table tr').each(function() {
+                            $(this).find('td').eq(curIndex).addClass('hover');
+                        });
+                    },
 
-                function() {
-                    var curTD = $(this);
-                    var curTR = curTD.parent();
-                    var curIndex = curTR.find('th').index($(this));
-                    $('.plans-table th').eq(curIndex).removeClass('hover');
-                    $('.plans-table tr').each(function() {
-                        $(this).find('td').eq(curIndex).removeClass('hover');
-                    });
-                }
-            );
-        });
+                    function() {
+                        var curTD = $(this);
+                        var curTR = curTD.parent();
+                        var curIndex = curTR.find('td').index($(this));
+                        $('.plans-table th').eq(curIndex).removeClass('hover');
+                        $('.plans-table tr').each(function() {
+                            $(this).find('td').eq(curIndex).removeClass('hover');
+                        });
+                    }
+                );
+
+                $(this).find('th:gt(0)').hover(
+                    function() {
+                        var curTD = $(this);
+                        var curTR = curTD.parent();
+                        var curIndex = curTR.find('th').index($(this));
+                        $('.plans-table th').eq(curIndex).addClass('hover');
+                        $('.plans-table tr').each(function() {
+                            $(this).find('td').eq(curIndex).addClass('hover');
+                        });
+                    },
+
+                    function() {
+                        var curTD = $(this);
+                        var curTR = curTD.parent();
+                        var curIndex = curTR.find('th').index($(this));
+                        $('.plans-table th').eq(curIndex).removeClass('hover');
+                        $('.plans-table tr').each(function() {
+                            $(this).find('td').eq(curIndex).removeClass('hover');
+                        });
+                    }
+                );
+            });
+        }
 
         // полоса "наверх"
         $(document).mousemove(function(e) {

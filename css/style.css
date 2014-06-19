@@ -74,7 +74,7 @@ header {height:71px; background:#1b1b1b; position:relative; z-index:4}
 .area-form-submit input {vertical-align:top; width:150px; height:35px; font:bold 14px/35px "Open Sans Condensed", sans-serif; color:#fff; text-transform:uppercase; border:none; background:#f05033 url(../images/area-submit.png); cursor:pointer; margin:0; padding:0; outline:none}
 .area-form-submit input:hover {color:#000}
 
-#plans {display:none; background:url(../images/plans.jpg) center top; padding:20px 0 36px 0}
+#plans {display:none; background:url(../images/plans.jpg) center top; padding:75px 0 36px 0}
 .plans-inner {width:990px; margin:0 auto}
 .plans-ctrl {width:100%; padding:0 0 21px 0}
 .plans-ctrl:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
