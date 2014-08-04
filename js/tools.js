@@ -9,13 +9,13 @@ var cursorOnArea = false;
     $(document).ready(function() {
 
         // адрес в шапке
-        $('.address-text a').click(function() {
+        $('.address-text a').click(function(e) {
             $.scrollTo($(this).attr('href'), 500);
-            return false;
+            e.preventDefault();
         });
 
         // переключение блоков
-        $('.header-menu li a').click(function() {
+        $('.header-menu li a').click(function(e) {
             var curLink = $(this);
             var curLi = curLink.parent();
             if (!curLi.hasClass('active')) {
@@ -23,25 +23,19 @@ var cursorOnArea = false;
                 curLi.addClass('active');
                 switch (curLink.attr('href')) {
                     case '#area':
-                        $('#plans, #events').hide();
+                        $('#plans').hide();
                         $('#area').show();
                         $('.pref-open').removeClass('pref-open');
                         break;
                     case '#plans':
-                        $('#area, #events').hide();
+                        $('#area').hide();
                         $('#plans').show();
-                        $('.area-info-open').removeClass('area-info-open');
-                        $('.pref-open').removeClass('pref-open');
-                        break;
-                    case '#events':
-                        $('#area, #plans').hide();
-                        $('#events').show();
                         $('.area-info-open').removeClass('area-info-open');
                         $('.pref-open').removeClass('pref-open');
                         break;
                 }
             }
-            return false;
+            e.preventDefault();
         });
 
         var curHeight = $(window).height() - 198;
@@ -51,18 +45,19 @@ var cursorOnArea = false;
 
         $('#area, #area li').css({'min-height': curHeight});
 
+        // заказ обратного звонка
+        $('.header-callback, .bottom-callback a').click(function(e) {
+            $('.window').show();
+            $('.window').css({'margin-top': -$('.window').height() / 2});
+            $('.overlay').show();
+            e.preventDefault();
+        });
+
         // слайдер
         $('.area-content').each(function() {
             var curSlider = $(this);
             curSlider.data('curIndex', 0);
             curSlider.data('disableAnimation', true);
-
-            var curHTML = '';
-            curSlider.find('li').each(function() {
-                curHTML += '<a href="#"></a>';
-            });
-            $('.area-ctrl').html(curHTML);
-            $('.area-ctrl a:first').addClass('active');
 
             if (periodSlider > 0) {
                 $(window).load(function(e) {
@@ -109,7 +104,7 @@ var cursorOnArea = false;
             }
         });
 
-        $('.area-ctrl a').live('click', function() {
+        $('.area-ctrl a').live('click', function(e) {
             if (!$(this).hasClass('active')) {
                 window.clearTimeout(timerSlider);
                 timerSlider = null;
@@ -137,11 +132,11 @@ var cursorOnArea = false;
                 }
             }
 
-            return false;
+            e.preventDefault();
         });
 
         // тарифы
-        $('.plans-ctrl ul li a').click(function() {
+        $('.plans-ctrl ul li a').click(function(e) {
             var curLi = $(this).parent();
             if (!curLi.hasClass('active')) {
                 var curIndex = $('.plans-ctrl ul li').index(curLi);
@@ -150,10 +145,10 @@ var cursorOnArea = false;
                 $('.plans-content').removeClass('active');
                 $('.plans-content').eq(curIndex).addClass('active');
             }
-            return false;
+            e.preventDefault();
         });
 
-        $('.plans-tabs-menu ul li a').click(function() {
+        $('.plans-tabs-menu ul li a').click(function(e) {
             var curLi = $(this).parent();
             if (!curLi.hasClass('active')) {
                 var curIndex = $('.plans-tabs-menu ul li').index(curLi);
@@ -162,7 +157,7 @@ var cursorOnArea = false;
                 $('.plans-tabs-content').removeClass('active');
                 $('.plans-tabs-content').eq(curIndex).addClass('active');
             }
-            return false;
+            e.preventDefault();
         });
 
         // события
@@ -171,11 +166,10 @@ var cursorOnArea = false;
             curSlider.data('curIndex', 0);
             curSlider.data('disableAnimation', true);
 
-            curSlider.find('ul').width(curSlider.find('li:first').width() * curSlider.find('li').length);
-            curSlider.find('li:lt(4)').addClass('active');
+            curSlider.find('ul').width(240 * curSlider.find('li').length);
         });
 
-        $('.events-next').click(function() {
+        $('.events-next').click(function(e) {
             var curSlider = $('.events-content');
             if (curSlider.data('disableAnimation')) {
                 var curIndex = curSlider.data('curIndex');
@@ -186,21 +180,16 @@ var cursorOnArea = false;
                 }
 
                 curSlider.data('disableAnimation', false);
-                curSlider.find('li').removeClass('active');
-                curSlider.find('ul').animate({'left': -curIndex * curSlider.find('li:first').width()}, 500, function() {
-                    curSlider.find('li').eq(curIndex).addClass('active');
-                    curSlider.find('li').eq(curIndex + 1).addClass('active');
-                    curSlider.find('li').eq(curIndex + 2).addClass('active');
-                    curSlider.find('li').eq(curIndex + 3).addClass('active');
+                curSlider.find('ul').animate({'left': -curIndex * 240}, 500, function() {
                     curSlider.data('curIndex', curIndex);
                     curSlider.data('disableAnimation', true);
                 });
             }
 
-            return false;
+            e.preventDefault();
         });
 
-        $('.events-prev').click(function() {
+        $('.events-prev').click(function(e) {
             var curSlider = $('.events-content');
             if (curSlider.data('disableAnimation')) {
                 var curIndex = curSlider.data('curIndex');
@@ -211,24 +200,19 @@ var cursorOnArea = false;
                 }
 
                 curSlider.data('disableAnimation', false);
-                curSlider.find('li').removeClass('active');
-                curSlider.find('ul').animate({'left': -curIndex * curSlider.find('li:first').width()}, 500, function() {
-                    curSlider.find('li').eq(curIndex).addClass('active');
-                    curSlider.find('li').eq(curIndex + 1).addClass('active');
-                    curSlider.find('li').eq(curIndex + 2).addClass('active');
-                    curSlider.find('li').eq(curIndex + 3).addClass('active');
+                curSlider.find('ul').animate({'left': -curIndex * 240}, 500, function() {
                     curSlider.data('curIndex', curIndex);
                     curSlider.data('disableAnimation', true);
                 });
             }
 
-            return false;
+            e.preventDefault();
         });
 
         // премущества
         $('.pref-info:last').addClass('pref-info-right');
 
-        $('.pref-link').click(function() {
+        $('.pref-link').click(function(e) {
             var curPref = $(this).parent();
             if (curPref.hasClass('pref-open')) {
                 curPref.removeClass('pref-open');
@@ -236,7 +220,7 @@ var cursorOnArea = false;
                 $('.pref-open').removeClass('pref-open');
                 curPref.addClass('pref-open');
             }
-            return false;
+            e.preventDefault();
         });
 
         $(document).click(function(e) {
@@ -246,17 +230,17 @@ var cursorOnArea = false;
         });
 
         // подсказка в полях формы
-        $('.open-input input, .area-form input').each(function() {
+        $('.open-input input, .area-form input, .add-form input').each(function() {
             if ($(this).val() == '') {
                 $(this).parent().find('span').css({'display': 'block'});
             }
         });
 
-        $('.open-input inputt, .area-form input').focus(function() {
+        $('.open-input input, .area-form input, .add-form input').focus(function() {
             $(this).parent().find('span').css({'display': 'none'});
         });
 
-        $('.open-input inputt, .area-form input').blur(function() {
+        $('.open-input input, .area-form input, .add-form input').blur(function() {
             if ($(this).val() == '') {
                 $(this).parent().find('span').css({'display': 'block'});
             }
@@ -276,8 +260,11 @@ var cursorOnArea = false;
         // валидация формы бесплатного дня
         $('.area-form form').validate();
 
+        // валидация формы бесплатного дня
+        $('.add-form form').validate();
+
         // меню подвале
-        $('.footer-menu').eq(0).find('a').click(function() {
+        $('.footer-menu').eq(0).find('a').click(function(e) {
             var curHref = $(this).attr('href');
             switch (curHref) {
                 case '#area':
@@ -289,14 +276,18 @@ var cursorOnArea = false;
                     $('.header-menu li a[href="#plans"]').trigger('click');
                     break;
                 case '#events':
-                    $.scrollTo(0, 500);
-                    $('.header-menu li a[href="#events"]').trigger('click');
+                    $.scrollTo($('#events'), 500);
                     break;
                 case '#about':
                     $.scrollTo($('#about'), 500);
                     break;
+                case '#feedback':
+                    $('.window').show();
+                    $('.window').css({'margin-top': -$('.window').height() / 2});
+                    $('.overlay').show();
+                    break;
             }
-            return false;
+            e.preventDefault();
         });
 
         // тарифы на главной
@@ -320,17 +311,17 @@ var cursorOnArea = false;
         }
 
         // окно формы
-        $('.main-plans-item-order a, .plans-tabs-descr-order a, .plans-table-head-order a').click(function() {
+        $('.main-plans-item-order a, .plans-tabs-descr-order a, .plans-table-head-order a').click(function(e) {
             $('.window').show();
             $('.window').css({'margin-top': -$('.window').height() / 2});
             $('.overlay').show();
-            return false;
+            e.preventDefault();
         });
 
-        $('.window-close').click(function() {
+        $('.window-close').click(function(e) {
             $('.window').hide();
             $('.overlay').hide();
-            return false;
+            e.preventDefault();
         });
 
         $('.overlay').click(function() {
@@ -456,6 +447,39 @@ var cursorOnArea = false;
 
         $('.up').click(function() {
             $.scrollTo(0, 500);
+        });
+
+        // отзывы
+        $('.responses-content').each(function() {
+            var curSlider = $(this);
+            curSlider.data('disableAnimation', true);
+
+            var newHTML = '';
+            curSlider.find('li').each(function() {
+                newHTML += '<a href="#"></a>';
+            });
+            $('.responses-ctrl').html(newHTML);
+            $('.responses-ctrl a:first').addClass('active');
+        });
+
+        $('#responses').on('click', '.responses-ctrl a', function(e) {
+            var curSlider = $('.responses-content');
+
+            if (curSlider.data('disableAnimation')) {
+                var curIndex = $('.responses-ctrl a').index($(this));
+
+                $('.responses-ctrl a.active').removeClass('active');
+                $('.responses-ctrl a').eq(curIndex).addClass('active');
+
+                curSlider.data('disableAnimation', false);
+                curSlider.find('li:visible').fadeOut(function() {
+                    curSlider.find('li').eq(curIndex).fadeIn(function() {
+                        curSlider.data('disableAnimation', true);
+                    });
+                });
+            }
+
+            e.preventDefault();
         });
 
     });

@@ -2,7 +2,7 @@
 
 html {min-width:1000px}
 
-body {min-width:1000px; margin:0; padding:0; font:14px/18px "PT Sans", sans-serif; color:#000; background:#fff}
+body {min-width:1000px; margin:0; padding:0; font:16px/20px "PT Sans", sans-serif; color:#000; background:#fff}
 
 a {color:#f05033; text-decoration:none; outline:none}
 a:hover {color:#000}
@@ -11,22 +11,25 @@ img {border:none}
 
 .wrapper {min-width:1000px; width:100%; position:relative; overflow:hidden}
 
-header {height:71px; background:#1b1b1b; position:relative; z-index:4}
-.header-inner {width:980px; margin:0 auto; position:relative}
+header {height:71px; background:#1b1b1b; position:relative; z-index:4; font-size:14px; line-height:18px}
+.header-inner {width:960px; margin:0 auto; position:relative}
 .header-inner:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 
-.logo {position:absolute; left:10px; top:0}
+.logo {position:absolute; left:0; top:0}
 
-.address {position:absolute; left:340px; top:16px; color:#fff}
+.address {position:absolute; left:280px; top:16px; color:#fff}
 .phone {font:bold 14px/18px "Open Sans Condensed", sans-serif}
 .address-text a {background:url(../images/dots.png) repeat-x left bottom}
 .address-text a:hover {color:#f05033; background:none}
 
-.header-menu {position:absolute; right:20px; top:18px; margin:0; padding:0; list-style:none}
-.header-menu li {float:left; margin:0; padding:0 20px}
-.header-menu li.active {background:#f05033}
+.header-menu {position:absolute; right:195px; top:18px; margin:0; padding:0; list-style:none}
+.header-menu li {float:left; margin:0; padding:0 15px}
+.header-menu li.active {background:#fff}
 .header-menu li a {height:35px; color:#fff; font:bold 14px/35px "Open Sans Condensed", sans-serif; text-transform:uppercase}
-.header-menu li.active a {text-decoration:none; cursor:default}
+.header-menu li.active a {color:#1b1b1b; text-decoration:none; cursor:default}
+
+.header-callback {position:absolute; right:10px; top:18px; display:block; width:140px; height:32px; text-transform:uppercase; font:bold 14px/35px "Open Sans Condensed", sans-serif; text-align:center; color:#fff; border-bottom:3px solid #ad0e09; background:#f05033}
+.header-callback:hover {color:#000}
 
 #area {position:relative; width:100%; overflow:hidden; height:523px}
 .area-shadow {position:absolute; left:0; top:0; width:100%; height:100%; background:#000 url(../images/fancybox_loading.gif) no-repeat center; z-index:2}
@@ -36,9 +39,10 @@ header {height:71px; background:#1b1b1b; position:relative; z-index:4}
 .area-content ul li:first-child {left:0; top:0}
 .area-img {position:absolute; width:100%}
 .area-inner {position:absolute}
-.area-ctrl {position:absolute; left:50%; margin-left:-480px; top:86px; z-index:2; display:none}
-.area-ctrl a {float:left; margin:0 2px 0 0; width:28px; height:8px; background:#fff}
-.area-ctrl a.active {background:#f43c26}
+.area-ctrl {position:absolute; left:50%; margin-left:-480px; top:71px; z-index:2; display:none}
+.area-ctrl a {float:left; margin:0 2px 0 0; width:38px; height:25px; position:relative; overflow:hidden}
+.area-ctrl a span {display:none; width:32px; height:19px; border:3px solid #f05033; position:absolute; left:0; top:0}
+.area-ctrl a.active span {display:block}
 .area-info {position:absolute}
 .area-info-open {z-index:3}
 .area-icon {width:31px; height:31px; background:url(../images/area-icon.png); cursor:pointer}
@@ -57,24 +61,31 @@ header {height:71px; background:#1b1b1b; position:relative; z-index:4}
 .area-text-title {font:bold 18px/18px "Open Sans Condensed", sans-serif; text-transform:uppercase}
 .area-text-descr {padding:11px 0 0 0}
 
-.area-form {position:absolute; left:50%; bottom:26px; width:720px; margin:0 0 0 -360px; background:url(../images/area-order.png); z-index:2}
+.area-form {position:absolute; left:50%; bottom:0; width:700px; padding:0 40px; margin:0 0 0 -390px; background:#fff; z-index:2}
+.add-form {position:relative; background:#1b1b1b; padding:9px 0 14px 0}
 .area-form form {margin:0; padding:0}
-.area-form-title {text-align:center; text-transform:uppercase; color:#fff; font:bold 24px/24px "Open Sans Condensed", sans-serif; padding:22px 0 0 0}
-.area-form-text {text-align:center; text-transform:uppercase; color:#fff; font:bold 14px/18px "Open Sans Condensed", sans-serif; padding:7px 0 0 0}
-.area-form-text span {color:#f05033}
-.area-form-row {width:100%; padding:19px 0 29px 0}
+.add-form form {width:700px; margin:0 auto}
+.area-form-title {text-align:center; text-transform:uppercase; color:#000; font:bold 24px/24px "Open Sans Condensed", sans-serif; padding:22px 0 0 0}
+.add-form .area-form-title {color:#fefefe; padding-bottom:9px}
+.area-form-row {width:100%; padding:26px 0 0 0}
 .area-form-row:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 .area-form-input {float:left; position:relative; margin:0 10px 0 0; background:#fff}
-.area-form-input:first-child {margin-left:50px}
 .area-form-input span {display:none; position:absolute; left:15px; top:9px; text-transform:uppercase; font:bold 14px/18px "Open Sans Condensed", sans-serif}
-.area-form-input input {vertical-align:top; position:relative; background:url(../images/blank.gif); border:1px solid #fff; font:bold 14px/18px "Open Sans Condensed", sans-serif; color:#000; width:193px; height:18px; padding:7px 14px 8px 14px; outline:none; margin:0}
+.area-form-input span em {font-style:normal; color:#e70000}
+.area-form-input input {vertical-align:top; position:relative; background:url(../images/blank.gif); border:1px solid #ccc; font:bold 14px/18px "Open Sans Condensed", sans-serif; color:#000; width:143px; height:18px; padding:7px 14px 8px 14px; outline:none; margin:0}
 .area-form-input input.error {border-color:#f05033}
 .area-form-input label {display:none !important}
-.area-form-submit {float:left}
-.area-form-submit input {vertical-align:top; width:150px; height:35px; font:bold 14px/35px "Open Sans Condensed", sans-serif; color:#fff; text-transform:uppercase; border:none; background:#f05033 url(../images/area-submit.png); cursor:pointer; margin:0; padding:0; outline:none}
+.area-form-submit {float:right}
+.area-form-submit input {vertical-align:top; width:149px; height:35px; font:bold 14px/35px "Open Sans Condensed", sans-serif; color:#fff; text-transform:uppercase; border:none; background:#f05033 url(../images/area-submit.png); cursor:pointer; margin:0; padding:0; outline:none}
 .area-form-submit input:hover {color:#000}
+.area-form-bottom {width:100%; padding:11px 0 9px 0}
+.add-form .area-form-bottom {color:#fff}
+.area-form-bottom:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.area-form-bottom .open-checkbox {float:left; width:auto}
+.area-form-hint {float:right; font-size:12px; line-height:16px; padding:8px 0 0 0}
+.area-form-hint span {color:#e70000}
 
-#plans {display:none; background:url(../images/plans.jpg) center top; padding:75px 0 36px 0}
+#plans {display:none; background:url(../images/plans.jpg) center top; padding:75px 0 36px 0; font-size:14px; line-height:18px}
 .plans-inner {width:990px; margin:0 auto}
 .plans-ctrl {width:100%; padding:0 0 21px 0}
 .plans-ctrl:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
@@ -173,34 +184,11 @@ header {height:71px; background:#1b1b1b; position:relative; z-index:4}
 .plans-table table tfoot td {padding:0}
 .plans-table table tfoot .plans-table-head-order {top:0; padding:21px 0 0 0; height:50px; left:0}
 
-#events {display:none; background:url(../images/plans.jpg) center top; padding:72px 0 81px 0}
-.events-title {width:204px; height:71px; margin:0 auto; background:#fff; text-align:center; font:bold 36px/71px "Open Sans Condensed", sans-serif; text-transform:uppercase}
-
-.events-container {position:relative; width:100%; margin-top:48px}
-.events-content {width:940px; margin:0 auto; position:relative}
-.events-content ul {width:9999px; margin:0; padding:0; list-style:none; position:relative}
-.events-content ul:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
-.events-content ul li {float:left; width:240px; margin:0; padding:0; opacity:.25; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=25)}
-.events-content ul li.active {opacity:1; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=100)}
-.event-photo {width:220px; position:relative; line-height:0; overflow:hidden}
-.event-text {background:#fff; padding:0 20px 27px 20px; width:180px}
-.event-title {font:bold 18px/18px "Open Sans Condensed", sans-serif; text-transform:uppercase; padding:17px 0 0 0}
-.event-date {color:#f05033; padding:17px 0 0 0}
-.event-descr {font-size:12px; padding:8px 0 0 0}
-.event-descr p {margin:0; padding:18px 0 0 0}
-.event-descr p:first-child {padding:0}
-.events-prev,
-.events-next {position:absolute; top:213px; display:block; z-index:750; width:72px; height:72px; background:url(../images/events-arrows.png)}
-.events-prev {left:0}
-.events-prev:hover {background-position:left -72px}
-.events-next {right:0; background-position:-72px top}
-.events-next:hover {background-position:-72px -72px}
-
 #prefs {height:124px; background:#1b1b1b}
 .prefs-inner {width:961px; margin:0 auto; padding:0 0 2px 1px; background:url(../images/prefs-sep.png) no-repeat}
 .prefs-inner:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
-.pref {float:left; width:159px; padding:0 1px 0 0; background:url(../images/prefs-sep.png) no-repeat right top; position:relative}
-.pref-link {display:block; width:159px; height:124px; color:#fff; text-align:center; font:bold 12px/18px "Open Sans Condensed", sans-serif; text-transform:uppercase}
+.pref {float:left; width:191px; padding:0 1px 0 0; background:url(../images/prefs-sep.png) no-repeat right top; position:relative}
+.pref-link {display:block; width:191px; height:124px; color:#fff; text-align:center; font:bold 12px/18px "Open Sans Condensed", sans-serif; text-transform:uppercase}
 .pref-link:hover {color:#fff}
 .pref-open .pref-link {color:#f05033}
 .pref-link span {display:block; height:72px; position:relative}
@@ -215,8 +203,6 @@ header {height:71px; background:#1b1b1b; position:relative; z-index:4}
 .pref-open .pref-icon-4 {background-position:left -27px}
 .pref-icon-5 {width:35px; height:35px; top:19px; background:url(../images/pref-icon-5.png)}
 .pref-open .pref-icon-5 {background-position:left -35px}
-.pref-icon-6 {width:45px; height:38px; top:18px; background:url(../images/pref-icon-6.png)}
-.pref-open .pref-icon-6 {background-position:left -38px}
 .pref-info {display:none; position:absolute; z-index:3; left:0; bottom:124px; background:#fff; width:260px; padding:34px 30px 28px 31px}
 .pref-info-right {left:auto; right:0}
 .pref-open .pref-info {display:block}
@@ -227,43 +213,83 @@ header {height:71px; background:#1b1b1b; position:relative; z-index:4}
 
 #main-plans {background:#262626; border-bottom:3px solid #f05033; padding:25px 0 22px 0}
 .main-plans-inner {display:table; width:960px; margin:0 auto}
-.main-plans-item {display:table-cell; vertical-align:top; border-left:1px solid #313131; width:20%}
+.main-plans-item {display:table-cell; vertical-align:top; border-left:1px solid #313131; width:25%}
 .main-plans-item:first-child {border-left:none}
 .main-plans-item-inner {position:relative; padding:18px 21px 5px 21px; margin:-18px -1px 0 -1px}
 .main-plans-item:hover .main-plans-item-inner {background:#1b1b1b}
 .main-plans-item.mobile:hover .main-plans-item-inner {background:none}
 .main-plans-item.active .main-plans-item-inner,
 .main-plans-item.active:hover .main-plans-item-inner {background:#1b1b1b}
-.main-plans-item-title {color:#fff; text-transform:uppercase; font:bold 18px/18px "Open Sans Condensed", sans-serif; padding:1px 0 0 0}
+.main-plans-item-photo {line-height:0; position:relative; margin:0 -10px}
+.main-plans-item-title {color:#fff; text-transform:uppercase; font:bold 18px/18px "Open Sans Condensed", sans-serif; padding:22px 0 0 0}
+.main-plans-item-title span {visibility:hidden; font:normal 30px/18px arial, helvetica, sans-serif; color:#f05033}
+.main-plans-item:hover .main-plans-item-title span {visibility:visible}
 .main-plans-item-price {color:#e65032; text-transform:uppercase; font:bold 36px/36px "Open Sans Condensed", sans-serif; padding:4px 0 0 0}
 .main-plans-item-price span {background:url(../images/rub.png) repeat-x left 32px}
-.main-plans-item-oldprice {padding:14px 0 0 0; font:bold 14px/16px "Open Sans Condensed", sans-serif; text-transform:uppercase; color:#e65032; text-decoration:line-through; opacity:.5; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50)}
-.main-plans-item-old {font-size:12px; line-height:14px; color:#808080; opacity:.5; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50)}
-.main-plans-item-descr {color:#fff; padding:14px 0 0 0}
-.main-plans-item-order {position:absolute; display:none; left:0; bottom:-66px; width:100%; height:66px; background:#1b1b1b}
+.main-plans-item-descr {color:#fff; padding:14px 0 29px 0}
+.main-plans-item-order {position:absolute; display:none; left:0; bottom:-68px; width:100%; height:68px; background:#1b1b1b}
 .main-plans-item:hover .main-plans-item-order {display:block}
 .main-plans-item.mobile:hover .main-plans-item-order {display:none}
 .main-plans-item.active .main-plans-item-order,
 .main-plans-item.active:hover .main-plans-item-order {display:block}
-.main-plans-item-order a {display:block; margin:0 20px; height:44px; font:bold 18px/47px "Open Sans Condensed", sans-serif; color:#fff; text-transform:uppercase; text-decoration:none; text-align:center; border-bottom:3px solid #b82c2c; background:#f05033}
+.main-plans-item-order a {display:block; margin:0 20px; height:44px; font:bold 14px/47px "Open Sans Condensed", sans-serif; color:#fff; text-transform:uppercase; text-decoration:none; text-align:center; border-bottom:3px solid #b82c2c; background:#f05033}
 .main-plans-item-order a:hover {color:#000}
 
-#about {width:980px; margin:0 auto; padding:69px 0 56px 0}
+#about {width:900px; margin:0 auto; padding:64px 0 68px 0; background:url(../images/about-sep.png) repeat-x left bottom}
 .about-title {text-align:center; text-transform:uppercase; font:bold 36px/36px "Open Sans Condensed", sans-serif}
-.about-row {width:100%; padding:45px 0 24px 0}
+.about-row {width:100%; padding:39px 0 0 0}
 .about-row:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
-.about-col {float:left; width:260px; padding:0 20px 0 40px}
-.about-author {width:100%; padding:0 0 17px 0}
-.about-author:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
-.about-author-photo {float:left; width:60px; height:60px; position:relative; -moz-border-radius:30px; -webkit-border-radius:30px; -khtml-border-radius:30px; border-radius:30px; behavior:url(./js/PIE.htc)}
-.about-author-container {margin-left:75px}
-.about-author-name {text-transform:uppercase; font:bold 18px/18px "Open Sans Condensed", sans-serif; padding:11px 0 0 0; letter-spacing:0}
-.about-author-post {color:#f05033; padding:2px 0 0 0}
-.about-author-text {background:#f6f7f8; font-style:italic; padding:25px 20px 28px 20px; position:relative}
-.about-author-text:before {content:""; display:block; position:absolute; left:27px; top:-8px; width:0; height:0; border-bottom:8px solid #f6f7f8; border-right:8px solid transparent}
-.about-sep {height:8px; background:url(../images/about-sep.png); width:900px; margin:18px auto 11px auto}
+.about-col {float:left; width:260px; padding:0 0 0 60px}
+.about-col:first-child {padding:0}
 
-.map {border-top:3px solid #f05033; border-bottom:3px solid #f05033; height:500px; width:100%; position:relative}
+#events {padding:48px 0 29px 0}
+.events-title {text-align:center; font:bold 36px/36px "Open Sans Condensed", sans-serif; text-transform:uppercase}
+
+.events-container {position:relative; width:100%; margin-top:32px}
+.events-content {width:960px; margin:0 auto; position:relative; overflow:hidden}
+.events-content ul {width:9999px; margin:0; padding:0; list-style:none; position:relative}
+.events-content ul:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.events-content ul li {float:left; width:220px; margin:0; padding:10px}
+.events-content ul li:hover {background:#f5f7f8}
+.event-photo {width:220px; position:relative; line-height:0; overflow:hidden}
+.event-text {padding:0 20px 17px 20px; width:180px}
+.event-title {font:bold 18px/18px "Open Sans Condensed", sans-serif; text-transform:uppercase; padding:17px 0 0 0}
+.event-date {font-size:14px; line-height:18px; color:#f05033; padding:17px 0 0 0}
+.event-descr {font-size:14px; line-height:18px; padding:9px 0 0 0}
+.event-descr p {margin:0; padding:18px 0 0 0}
+.event-descr p:first-child {padding:0}
+.events-prev,
+.events-next {position:absolute; top:45px; display:block; z-index:750; width:72px; height:72px; background:url(../images/events-arrows.png)}
+.events-prev {left:0}
+.events-prev:hover {background-position:left -72px}
+.events-next {right:0; background-position:-72px top}
+.events-next:hover {background-position:-72px -72px}
+
+#responses {background:#f5f7f8}
+.responses-inner {width:960px; margin:0 auto; padding:59px 0 56px 0}
+.responses-title {text-align:center; font:bold 36px/36px "Open Sans Condensed", sans-serif; text-transform:uppercase; padding:0 0 18px 0}
+.responses-content {width:100%; position:relative; z-index:2; padding:0 0 66px 0}
+.responses-content ul {margin:0; padding:0; list-style:none; position:relative; width:960px}
+.responses-content ul li {display:none; position:relative; width:960px; margin:0; padding:0}
+.responses-content ul li:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.responses-content ul li:first-child {display:block}
+.responses-item {float:left; width:240px; height:240px; position:relative; cursor:default}
+.responses-item:hover {z-index:2}
+.responses-item-photo {width:240px; height:240px; position:relative; overflow:hidden; line-height:0}
+.responses-item-author {position:absolute; left:20px; bottom:26px; width:200px; color:#fff; font-size:14px; line-height:18px}
+.responses-item:hover .responses-item-author {display:none}
+.responses-item-author-name {text-transform:uppercase; font-weight:bold; font-size:14px; font-family:"Open Sans Condensed", sans-serif}
+.responses-item-detail {display:none; position:absolute; left:0; top:240px; padding:24px 19px 25px 19px; width:200px; background:#fff; border:1px solid #000; border-top:none}
+.responses-item-detail:after {content:""; display:block; width:0; height:0; position:absolute; left:50%; margin-left:-8px; top:-8px; border-bottom:8px solid #fff; border-left:8px solid transparent; border-right:8px solid transparent}
+.responses-item:hover .responses-item-detail {display:block}
+.responses-item-detail-text {font-size:16px; font-style:italic; line-height:20px}
+.responses-item-detail .responses-item-detail-author {font-size:14px; line-height:18px; padding:27px 0 0 0}
+.responses-item-detail .responses-item-author-post {color:#f05033}
+.responses-ctrl {text-align:center; font-size:0; line-height:0; letter-spacing:-1px}
+.responses-ctrl a {display:inline-block; width:14px; height:14px; margin:0 2px; border:1px solid #1b1b1b; background:url(../images/blank.gif)}
+.responses-ctrl a.active {background:#1b1b1b}
+
+.map {border-top:3px solid #f05033; border-bottom:3px solid #f05033; height:500px; width:100%; position:relative; font-size:14px; line-height:18px}
 #map {height:500px; width:100%}
 
 .map-info {position:absolute; left:50%; top:93px; margin-left:-470px; width:216px; background:#1b1b1b; padding:30px 42px 35px 42px}
@@ -272,7 +298,15 @@ header {height:71px; background:#1b1b1b; position:relative; z-index:4}
 .map-info-text p {margin:0; padding:18px 0 0 0}
 .map-info-text strong {text-transform:uppercase; font:bold 18px/18px "Open Sans Condensed", sans-serif}
 
-footer {background:#1b1b1b}
+.bottom {background:#f05033}
+.bottom-inner {width:960px; margin:0 auto; padding:0 0 17px 0}
+.bottom-inner:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.bottom-text {float:left; width:460px; text-align:right; text-transform:uppercase; color:#fff; font:bold 14px/18px "Open Sans Condensed", sans-serif; padding:15px 20px 0 0}
+.bottom-callback {float:left; padding:19px 0 0 0}
+.bottom-callback a {display:block; width:160px; height:32px; text-transform:uppercase; font:bold 14px/35px "Open Sans Condensed", sans-serif; text-align:center; color:#fff; border-bottom:3px solid #130505; background:#1b1b1b}
+.bottom-callback a:hover {color:#f05033}
+
+footer {background:#1b1b1b; font-size:14px; line-height:18px}
 footer a:hover {color:#fff}
 
 .footer-inner {width:960px; margin:0 auto; padding:49px 0 0 20px}
@@ -294,14 +328,14 @@ footer a:hover {color:#fff}
 .social a.social-twitter {background-position:-70px top}
 .social a.social-gplus {background-position:-105px top}
 
-.copyrights {background:#1b1b1b}
+.copyrights {background:#1b1b1b; font-size:14px; line-height:18px}
 .copyrights a:hover {color:#fff}
 .copyrights-inner {width:960px; padding:4px 0 37px 20px; margin:0 auto; color:#fff}
 .copyrights-inner p {margin:0; padding:0}
 
 .overlay {display:none; top:0; left:0; bottom:auto; right:auto; z-index:900; width:100%; height:100%; position:fixed; background:#1b1b1b; opacity:.75; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=75)}
 
-.window {display:none; position:fixed; z-index:999; left:50%; top:50%; margin:0 0 0 -410px; padding:0 40px; width:740px; background:#fff}
+.window {display:none; position:fixed; z-index:999; left:50%; top:50%; margin:0 0 0 -410px; padding:0 40px; width:740px; background:#fff; font-size:14px; line-height:18px}
 .open-title {text-align:center; font:bold 36px/36px "Open Sans Condensed", sans-serif; text-transform:uppercase; padding:27px 0 0 0}
 .open-container {width:100%; padding:54px 0 35px 0}
 .open-container:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
@@ -333,5 +367,5 @@ footer a:hover {color:#fff}
 .up-link {position:absolute; left:0; top:50%; margin-top:-15px; width:100%; text-align:center; color:#000; font-size:14px; line-height:18px}
 .up-link img {display:block; margin:0 auto 3px auto}
 
-.likes {position:fixed; z-index:800; right:0; top:50%; margin-top:-190px; width:73px; padding:17px 0 8px 16px; background:#f3f3f3}
+.likes {position:fixed; z-index:720; right:0; top:50%; margin-top:-190px; width:73px; padding:17px 0 8px 16px; background:#f3f3f3}
 .likes .b-share_theme_counter .b-share_type_small .b-share-btn__wrap {margin:0; padding:0 0 9px 0; display:block; float:none; overflow:hidden; width:100%}
