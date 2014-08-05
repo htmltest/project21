@@ -14,8 +14,9 @@
         <script src="js/jquery-1.8.2.min.js"></script>
         <script src="js/jquery.validate.min.js"></script>
         <script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
-         <script src="js/modernizr.custom.90364.js"></script>
-       <script src="js/tools.js"></script>
+        <script src="js/modernizr.custom.90364.js"></script>
+        <script src="js/jquery.maskedinput.min.js"></script>
+        <script src="js/tools.js"></script>
 
         <meta name="viewport" content="width=1024" />
     </head>
@@ -220,7 +221,7 @@
                                 <div class="plans-tabs-menu">
                                     <ul>
                                         <li>
-                                            <a href="#">
+                                            <a href="#" id="plan1">
                                                 <div class="plans-tabs-menu-title">Офис</div>
                                                 <div class="plans-tabs-menu-price">15000 <span>Р</span></div>
                                                 <div class="plans-tabs-menu-oldprice">20000 Р</div>
@@ -228,7 +229,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="#" id="plan2">
                                                 <div class="plans-tabs-menu-title">Офис плюс</div>
                                                 <div class="plans-tabs-menu-price">18000 <span>Р</span></div>
                                                 <div class="plans-tabs-menu-oldprice">23000 Р</div>
@@ -236,7 +237,7 @@
                                             </a>
                                         </li>
                                         <li class="active">
-                                            <a href="#">
+                                            <a href="#" id="plan3">
                                                 <div class="plans-tabs-menu-title">Клуб 1</div>
                                                 <div class="plans-tabs-menu-price">1000 <span>Р</span></div>
                                                 <div class="plans-tabs-menu-oldprice">2500 Р</div>
@@ -244,7 +245,7 @@
                                             </a>
                                         </li>
                                         <li>
-                                            <a href="#">
+                                            <a href="#" id="plan4">
                                                 <div class="plans-tabs-menu-title">Клуб 5</div>
                                                 <div class="plans-tabs-menu-price">4000 <span>Р</span></div>
                                                 <div class="plans-tabs-menu-oldprice">5000 Р</div>
@@ -929,8 +930,10 @@
                 <div class="main-plans-inner">
                     <div class="main-plans-item">
                         <div class="main-plans-item-inner">
-                            <div class="main-plans-item-photo"><img src="files/main-plans-1.jpg" alt="" width="220" height="146" /></div>
-                            <div class="main-plans-item-title">офис на месяц <span>&rarr;</span></div>
+                            <a href="#plan1">
+                                <div class="main-plans-item-photo"><img src="files/main-plans-1.jpg" alt="" width="220" height="146" /></div>
+                                <div class="main-plans-item-title">офис на месяц <span>&rarr;</span></div>
+                            </a>
                             <div class="main-plans-item-price">12000 <span>Р</span></div>
                             <div class="main-plans-item-descr">Базовый пакет офисных услуг, который включает все необходимое для каждодневной эффективной работы. Предоставляется полноценное персональное рабочее место за столом, закрепленное за клиентом.</div>
                             <div class="main-plans-item-order"><a href="#">Получить тестовый день</a></div>
@@ -938,8 +941,10 @@
                     </div>
                     <div class="main-plans-item">
                         <div class="main-plans-item-inner">
-                            <div class="main-plans-item-photo"><img src="files/main-plans-2.jpg" alt="" width="220" height="146" /></div>
-                            <div class="main-plans-item-title">офис+ на месяц <span>&rarr;</span></div>
+                            <a href="#plan2">
+                                <div class="main-plans-item-photo"><img src="files/main-plans-2.jpg" alt="" width="220" height="146" /></div>
+                                <div class="main-plans-item-title">офис+ на месяц <span>&rarr;</span></div>
+                            </a>
                             <div class="main-plans-item-price">14500 <span>Р</span></div>
                             <div class="main-plans-item-descr">Возможность работы в клубной зоне Коворка (на креслах и диванах) в течение месяца без ограничения количества посещений.</div>
                             <div class="main-plans-item-order"><a href="#">Получить тестовый день</a></div>
@@ -947,8 +952,10 @@
                     </div>
                     <div class="main-plans-item">
                         <div class="main-plans-item-inner">
-                            <div class="main-plans-item-photo"><img src="files/main-plans-3.jpg" alt="" width="220" height="146" /></div>
-                            <div class="main-plans-item-title">клуб на месяц <span>&rarr;</span></div>
+                            <a href="#plan3">
+                                <div class="main-plans-item-photo"><img src="files/main-plans-3.jpg" alt="" width="220" height="146" /></div>
+                                <div class="main-plans-item-title">клуб на месяц <span>&rarr;</span></div>
+                            </a>
                             <div class="main-plans-item-price">9500 <span>Р</span></div>
                             <div class="main-plans-item-descr">Клубный абонемент на офисное и почтовое обслуживание в течение 3 месяцев и 25 рабочих дней в Коворке по удобному вам графику. Предоставляется полноценное рабочее место за столом.</div>
                             <div class="main-plans-item-order"><a href="#">Получить тестовый день</a></div>
@@ -956,8 +963,10 @@
                     </div>
                     <div class="main-plans-item">
                         <div class="main-plans-item-inner">
-                            <div class="main-plans-item-photo"><img src="files/main-plans-4.jpg" alt="" width="220" height="146" /></div>
-                            <div class="main-plans-item-title">Конференц-зал <span>&rarr;</span></div>
+                            <a href="#plan4">
+                                <div class="main-plans-item-photo"><img src="files/main-plans-4.jpg" alt="" width="220" height="146" /></div>
+                                <div class="main-plans-item-title">Конференц-зал <span>&rarr;</span></div>
+                            </a>
                             <div class="main-plans-item-price">12000 <span>Р</span></div>
                             <div class="main-plans-item-descr">Пространство для проведения мероприятий, вмещающее до 45 человек. В стоимость входит проектор, флипчат и WiFi. Есть возможность организовать кофе и чай для гостей. Цена указана за 1 час, аренда - от 2-х часов.</div>
                             <div class="main-plans-item-order"><a href="#">Получить тестовый день</a></div>

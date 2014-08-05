@@ -254,6 +254,9 @@ var cursorOnArea = false;
             curSpan.find('input').prop('checked', curSpan.hasClass('checked')).trigger('change');
         });
 
+        // телефон
+        $('input[name="phone"]').mask('999 999-99-99', {placeholder: '*'});
+
         // валидация формы открытой недели
         $('.open-form form').validate();
 
@@ -478,6 +481,16 @@ var cursorOnArea = false;
                     });
                 });
             }
+
+            e.preventDefault();
+        });
+
+        // главные тарифы
+        $('.main-plans-item-inner a').click(function(e) {
+            $.scrollTo(0, 500);
+            $('.header-menu li a[href="#plans"]').trigger('click');
+            $('.plans-ctrl ul li:first a').click();
+            $($(this).attr('href')).click();
 
             e.preventDefault();
         });

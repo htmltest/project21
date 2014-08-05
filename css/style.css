@@ -217,6 +217,7 @@ header {height:71px; background:#1b1b1b; position:relative; z-index:4; font-size
 .main-plans-item:first-child {border-left:none}
 .main-plans-item-inner {position:relative; padding:18px 21px 5px 21px; margin:-18px -1px 0 -1px}
 .main-plans-item:hover .main-plans-item-inner {background:#1b1b1b}
+.main-plans-item-inner a {text-decoration:none}
 .main-plans-item.mobile:hover .main-plans-item-inner {background:none}
 .main-plans-item.active .main-plans-item-inner,
 .main-plans-item.active:hover .main-plans-item-inner {background:#1b1b1b}
