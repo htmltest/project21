@@ -453,6 +453,17 @@ var cursorOnArea = false;
         });
 
         // отзывы
+        $('.responses-item-photo').BlackAndWhite({hoverEffect: false});
+        $('.responses-item').hover(
+            function() {
+                $(this).find('.BWfade').stop(true, true).fadeOut();
+            },
+
+            function() {
+                $(this).find('.BWfade').stop(true, true).fadeIn();
+            }
+        );
+
         $('.responses-content').each(function() {
             var curSlider = $(this);
             curSlider.data('disableAnimation', true);
