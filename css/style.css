@@ -16,6 +16,7 @@ header {height:71px; background:#1b1b1b; position:relative; z-index:4; font-size
 .header-inner:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 
 .logo {position:absolute; left:0; top:0}
+.logo span {display:block; position:absolute; left:0; top:98px; width:100%; text-align:center; color:#fff; font:bold 14px/18px "Open Sans Condensed", sans-serif; text-transform:uppercase; word-spacing:-2px}
 
 .address {position:absolute; left:280px; top:16px; color:#fff}
 .phone {font:bold 14px/18px "Open Sans Condensed", sans-serif}
